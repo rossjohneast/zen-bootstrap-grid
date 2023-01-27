@@ -1,0 +1,17 @@
+.wp-block-zenbsblocks-card .image-ctr {
+  position: relative;
+}
+
+.components-button.btn-remove{
+  background-color: #007cba;
+  padding: 5px 5px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.components-button.btn-remove svg {
+  background: #007cba;
+  fill: white;
+}
+/*# sourceMappingURL=editor.css.map */

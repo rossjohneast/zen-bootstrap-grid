@@ -1,0 +1,60 @@
+/* ADMIN DASHBOARD BACK END STYLES */
+/* Custom dashboard styles for the zenbsblocks plugin */
+.components-tab-panel__tabs-item{
+    padding: 3px 8px;
+}
+.interface-interface-skeleton__sidebar .block-editor-block-card{
+    background: #f7f7f7;
+}
+
+.interface-interface-skeleton__sidebar h2.block-editor-block-card__title{
+font-weight:bold;
+}
+.URLInput-form {
+    display: flex;
+    margin-bottom: 24px;
+}
+.URLInput-form input{
+    width: 100%!important;
+    border: 1px solid black!important;
+}
+.URLInput-form button{
+    /* margin-bottom: 24px; */
+    align-self: flex-end;
+}
+.URLInput-form > div.components-base-control{
+    margin-bottom: 0!important;
+}
+.w-100{
+    width:100%;
+}
+.components-panel-children-w-100 .components-base-control,
+.components-panel__row.w-100 > .components-base-control{
+    width:100%;
+}
+.components-panel__body h2 button,
+.components-panel__body label{
+    text-transform: capitalize;
+}
+.components-button.btn-remove{
+    background-color: #007cba;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+  }
+.components-button.btn-remove > span{
+    color: white;
+    font-size: 20px;
+  }
+  .components-button.btn-remove svg {
+    fill: white;
+  }
+  .card-img-top.image-ctr{
+      position: relative;
+  }

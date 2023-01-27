@@ -1,0 +1,102 @@
+.wp-block-zenbsblocks-blocks-team-member__title {
+  color: #222;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.wp-block-zenbsblocks-blocks-team-member__info {
+  color: #565656;
+  font-weight: 300;
+  margin-bottom: 05px;
+}
+
+.wp-block-zenbsblocks-section .wp-block-zenbsblocks-col,
+.wp-block-zenbsblocks-layout-hero-slider .wp-block-zenbsblocks-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+}
+
+
+
+.wp-block-zenbsblocks-section .container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.wp-block-zenbsblocks-layout-hero-slider .slick-slide
+.wp-block-zenbsblocks-layout-hero-slider .slick-track,
+.wp-block-zenbsblocks-layout-hero-slider .slick-list {
+  width: 100%;
+}
+
+.wp-block-zenbsblocks-card,
+.wp-block-zenbsblocks-card > .card {
+  height: 100%;
+}
+
+.wp-block-zenbsblocks-section > section,
+.wp-block-zenbsblocks-section > .col {
+  background-size: cover;
+}
+
+@media (max-width: 992px) {
+  div.wp-block-zenbsblocks-col[class^="col"] {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .col {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+
+@media (max-width: 576px) {
+  .wp-block-zenbsblocks-col.col:not(.col-1):not(.col-2):not(.col-3):not(.col-4):not(.col-5):not(.col-6):not(.col-7):not(.col-8):not(.col-9):not(.col-10):not(.col-11):not(.col-12) {
+    -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+    width: 100%;
+  }
+}
+
+.wp-block-zenbsblocks-col.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wp-block-zenbsblocks-col-break {
+  height: 0;
+}
+
+.zen-gut-tab-panel .components-tab-panel__tab-content {
+  padding: 10px;
+  border: 1px solid #e2e4e7;
+}
+
+.zen-gut-tab-panel .components-tab-panel__tab-content .components-button svg {
+  max-width: 26px;
+}
+
+.components-button.zen-gut-tab-panel-tab {
+  border: 1px solid #e2e4e7;
+  border-radius: 0;
+}
+
+.zen-gut-tab-panel-tab.zen-gut-tab-panel-tab-active-tab {
+  border-bottom: 1px solid #007cba;
+}
+
+/*# sourceMappingURL=style.css.map */
