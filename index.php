@@ -1,9 +1,9 @@
 <?php
 // phpcs:disable
 /**
- * Plugin Name: Zen Bootstrap Blocks
- * Description:       Gutenberg Bootstrap blocks from Theme-Zen.
- * Version:           1.0.2
+ * Plugin Name: Zen Bootstrap Grid
+ * Description:       Gutenberg Bootstrap 5 grid blocks from Theme-Zen.
+ * Version:           1.0.0
  * Author:            Theme Zen
  * Author URI:        https://www.theme-zen.com/
  * Text Domain: zenbsblocks
@@ -11,7 +11,7 @@
 // Exit if accessed directly.
 
 if(!function_exists('add_action')){
-    echo "Plugin disabled, WorpPress not loaded.";
+    echo "Plugin disabled, WordPress not loaded.";
     exit;
 }
 
