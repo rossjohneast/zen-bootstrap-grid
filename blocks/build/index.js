@@ -739,10 +739,10 @@ const block_icons = {
 
 /***/ }),
 
-/***/ "./app/button/index.js":
-/*!*****************************!*\
-  !*** ./app/button/index.js ***!
-  \*****************************/
+/***/ "./app/button/button.js":
+/*!******************************!*\
+  !*** ./app/button/button.js ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1001,10 +1001,10 @@ registerBlockType('zenbsblocks/button', {
 
 /***/ }),
 
-/***/ "./app/container/index.js":
-/*!********************************!*\
-  !*** ./app/container/index.js ***!
-  \********************************/
+/***/ "./app/container/container.js":
+/*!************************************!*\
+  !*** ./app/container/container.js ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -4926,6 +4926,101 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./app/responsive-spacer/responsive-spacer.js":
+/*!****************************************************!*\
+  !*** ./app/responsive-spacer/responsive-spacer.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _block_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../block-icons */ "./app/block-icons/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+
+
+const {
+  registerBlockType
+} = wp.blocks;
+const {
+  __
+} = wp.i18n;
+const {
+  InspectorControls,
+  RichText,
+  URLInput
+} = wp.blockEditor;
+const {
+  Panel,
+  PanelBody,
+  PanelRow,
+  Button,
+  FormToggle,
+  SelectControl,
+  RangeControl
+} = wp.components;
+
+registerBlockType("zenbsblocks/responsive-spacer", {
+  title: __("Responsive spacer", "zenbsblocks"),
+  description: __("Responsive vertical spacer.", "zenbsblocks"),
+  category: "zenbsblocks",
+  icon: _block_icons__WEBPACK_IMPORTED_MODULE_1__["default"].button,
+  attributes: {
+    id: {
+      type: "number"
+    },
+    minHeightCol: {
+      type: "number"
+    }
+  },
+  edit: (props, isSelected) => {
+    const style = {
+      minHeight: props.attributes.minHeightCol
+    };
+    return [wp.element.createElement(InspectorControls, null, wp.element.createElement(Panel, null, wp.element.createElement(PanelBody, {
+      title: __("Button Settings", "zenbsblocks")
+    }, wp.element.createElement(PanelRow, {
+      className: "w-100"
+    }, wp.element.createElement(RangeControl, {
+      label: __("Min height", "zenbsblocks"),
+      min: 0,
+      max: 2000,
+      step: 5,
+      allowReset: true,
+      resetFallbackValue: "0",
+      value: props.attributes.minHeightCol,
+      onChange: new_val => {
+        props.setAttributes({
+          minHeightCol: new_val
+        });
+      }
+    }))))), wp.element.createElement("span", {
+      className: props.className
+    }, wp.element.createElement(RichText, {
+      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()("btn", [`${props.attributes.btnStyle !== undefined ? `${props.attributes.btnStyle}` : ""}`], [`${props.attributes.btnSize !== undefined ? `${props.attributes.btnSize}` : ""}`], [`${props.attributes.btnWidth !== undefined ? `${props.attributes.btnWidth}` : ""}`]),
+      placeholder: __("Add button text and link", "zenbsblocks"),
+      value: props.attributes.content,
+      onChange: new_val => props.setAttributes({
+        content: new_val
+      }),
+      allowedFormats: [],
+      keepPlaceholderOnFocus: true
+    }))];
+  },
+  save: props => {
+    return wp.element.createElement("a", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()("btn", [`${props.attributes.btnStyle !== undefined ? `${props.attributes.btnStyle}` : ""}`], [`${props.attributes.btnSize !== undefined ? `${props.attributes.btnSize}` : ""}`], [`${props.attributes.btnWidth !== undefined ? `${props.attributes.btnWidth}` : ""}`]),
+      href: props.attributes.url,
+      target: props.attributes.href_target ? "_blank" : null,
+      rel: props.attributes.href_rel ? "noopener" : null
+    }, props.attributes.content);
+  }
+});
+
+/***/ }),
+
 /***/ "./app/shared/animation/aos-insp-cnt.js":
 /*!**********************************************!*\
   !*** ./app/shared/animation/aos-insp-cnt.js ***!
@@ -6468,24 +6563,20 @@ const sharedPaddingInspCnt = props => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_layout_script_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app/layout/script.js */ "./app/layout/script.js");
-/* harmony import */ var _app_container_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app/container/index.js */ "./app/container/index.js");
+/* harmony import */ var _app_container_container_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app/container/container.js */ "./app/container/container.js");
 /* harmony import */ var _app_layout_row_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app/layout/row.js */ "./app/layout/row.js");
 /* harmony import */ var _app_layout_col_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../app/layout/col.js */ "./app/layout/col.js");
-/* harmony import */ var _app_button_index_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../app/button/index.js */ "./app/button/index.js");
+/* harmony import */ var _app_button_button_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../app/button/button.js */ "./app/button/button.js");
 /* harmony import */ var _app_layout_div_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../app/layout/div.js */ "./app/layout/div.js");
+/* harmony import */ var _app_responsive_spacer_responsive_spacer_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../app/responsive-spacer/responsive-spacer.js */ "./app/responsive-spacer/responsive-spacer.js");
 //Main file
 
 
 
 
-// import '../app/card/index.js';
-// import '../app/card-custom/index.js';
-// import '../app/accordion/index.js';
-// import '../app/modal/index.js';
 
 
-// import '../app/carousel/index.js';
-// import '../app/carousel/script.js';
+
 
 /***/ }),
 
