@@ -80,7 +80,9 @@
 .editor-styles-wrapper .wp-block[data-type="zenbsgridblocks/responsive-spacer"]:focus {
     background: rgba(0,0,0,.1);
 }
-
+.wp-block-zenbsgridblocks-cover-layout > .block-editor-inner-blocks  .wp-block-cover{
+    margin-top: 0;
+}
 
 /* Responsive spacer styles */
 .editor-styles-wrapper div.pb-0 {

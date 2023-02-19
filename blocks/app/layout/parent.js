@@ -86,7 +86,7 @@ const attributes = {
 }
 
 registerBlockType( 'zenbsgridblocks/section', {
-    title:          __( 'Section', 'zenbsgridblocks' ),
+    title:          __( 'Section Layout', 'zenbsgridblocks' ),
     description:    __( 'Build layouts of all shapes and sizes thanks to a twelve column system and six default responsive tiers. ', 'zenbsgridblocks' ),
     category:       'zenbsgridblocks',
     icon:           block_icons.div,
