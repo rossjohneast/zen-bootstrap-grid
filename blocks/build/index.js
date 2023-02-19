@@ -3982,8 +3982,8 @@ registerBlockType('zenbsblocks/section', {
         ...BackgroundIsActive
       }
     }, wp.element.createElement(InnerBlocks, {
-      allowedBlocks: ['zenbsblocks/container'],
-      template: [['zenbsblocks/container']]
+      allowedBlocks: ['zenbsblocks/container', 'zenbsblocks/responsive-spacer'],
+      template: [['zenbsblocks/responsive-spacer'], ['zenbsblocks/container'], ['zenbsblocks/responsive-spacer']]
     })))];
   },
   save(props) {
@@ -4948,31 +4948,51 @@ const {
   __
 } = wp.i18n;
 const {
-  InspectorControls,
-  RichText,
-  URLInput
+  InspectorControls
 } = wp.blockEditor;
 const {
   Panel,
   PanelBody,
-  PanelRow,
-  Button,
-  FormToggle,
-  SelectControl,
-  RangeControl
+  RangeControl,
+  TabPanel
 } = wp.components;
 
 registerBlockType("zenbsblocks/responsive-spacer", {
   title: __("Responsive spacer", "zenbsblocks"),
   description: __("Responsive vertical spacer.", "zenbsblocks"),
   category: "zenbsblocks",
-  icon: _block_icons__WEBPACK_IMPORTED_MODULE_1__["default"].button,
+  icon: {
+    src: wp.element.createElement("svg", {
+      viewBox: "0 0 24 24",
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "24",
+      height: "24",
+      "aria-hidden": "true",
+      focusable: "false"
+    }, wp.element.createElement("path", {
+      d: "M12.5 4.2v1.6h4.7L5.8 17.2V12H4.2v7.8H12v-1.6H6.8L18.2 6.8v4.7h1.6V4.2z"
+    }))
+  },
   attributes: {
-    id: {
-      type: "number"
+    paddingB: {
+      type: 'number',
+      default: 3
     },
-    minHeightCol: {
-      type: "number"
+    paddingSMB: {
+      type: 'number'
+    },
+    paddingMDB: {
+      type: 'number'
+    },
+    paddingLGB: {
+      type: 'number',
+      default: 5
+    },
+    paddingXLB: {
+      type: 'number'
+    },
+    paddingXXLB: {
+      type: 'number'
     }
   },
   edit: (props, isSelected) => {
@@ -4980,42 +5000,128 @@ registerBlockType("zenbsblocks/responsive-spacer", {
       minHeight: props.attributes.minHeightCol
     };
     return [wp.element.createElement(InspectorControls, null, wp.element.createElement(Panel, null, wp.element.createElement(PanelBody, {
-      title: __("Button Settings", "zenbsblocks")
-    }, wp.element.createElement(PanelRow, {
-      className: "w-100"
-    }, wp.element.createElement(RangeControl, {
-      label: __("Min height", "zenbsblocks"),
-      min: 0,
-      max: 2000,
-      step: 5,
-      allowReset: true,
-      resetFallbackValue: "0",
-      value: props.attributes.minHeightCol,
-      onChange: new_val => {
-        props.setAttributes({
-          minHeightCol: new_val
-        });
-      }
-    }))))), wp.element.createElement("span", {
-      className: props.className
-    }, wp.element.createElement(RichText, {
-      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()("btn", [`${props.attributes.btnStyle !== undefined ? `${props.attributes.btnStyle}` : ""}`], [`${props.attributes.btnSize !== undefined ? `${props.attributes.btnSize}` : ""}`], [`${props.attributes.btnWidth !== undefined ? `${props.attributes.btnWidth}` : ""}`]),
-      placeholder: __("Add button text and link", "zenbsblocks"),
-      value: props.attributes.content,
-      onChange: new_val => props.setAttributes({
-        content: new_val
-      }),
-      allowedFormats: [],
-      keepPlaceholderOnFocus: true
-    }))];
+      title: __('Height', 'zenbsblocks'),
+      initialOpen: true
+    }, wp.element.createElement("div", {
+      className: "zen-gut-panel-help"
+    }, wp.element.createElement("p", null, "You only need to use the setting for the smallest device width you want to support.")), wp.element.createElement(TabPanel, {
+      className: "zen-gut-tab-panel",
+      activeClass: "zen-gut-tab-panel-tab-active-tab",
+      tabs: [{
+        name: 'tab0',
+        title: _block_icons__WEBPACK_IMPORTED_MODULE_1__["default"].bpmobile,
+        className: 'zen-gut-tab-panel-tab',
+        content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Mobile portrait")), wp.element.createElement("div", null, "Smallest device width and greater"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
+          label: __('Height', 'zenbsblocks'),
+          min: 0,
+          max: 20,
+          allowReset: true,
+          resetFallbackValue: undefined,
+          value: props.attributes.paddingB,
+          onChange: new_val => {
+            props.setAttributes({
+              paddingB: new_val
+            });
+          }
+        })]
+      }, {
+        name: 'tab1',
+        title: _block_icons__WEBPACK_IMPORTED_MODULE_1__["default"].bpmobileland,
+        className: 'zen-gut-tab-panel-tab',
+        content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Mobile landscape")), wp.element.createElement("div", null, "Width equal or greater than 576px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
+          label: __('Height', 'zenbsblocks'),
+          min: 0,
+          max: 20,
+          allowReset: true,
+          resetFallbackValue: undefined,
+          value: props.attributes.paddingSMB,
+          onChange: new_val => {
+            props.setAttributes({
+              paddingSMB: new_val
+            });
+          }
+        })]
+      }, {
+        name: 'tab2',
+        title: _block_icons__WEBPACK_IMPORTED_MODULE_1__["default"].bptablet,
+        className: 'zen-gut-tab-panel-tab',
+        content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Tablet portrait")), wp.element.createElement("div", null, "Width equal or greater than 768px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
+          label: __('Height', 'zenbsblocks'),
+          min: 0,
+          max: 20,
+          allowReset: true,
+          resetFallbackValue: undefined,
+          value: props.attributes.paddingMDB,
+          onChange: new_val => {
+            props.setAttributes({
+              paddingMDB: new_val
+            });
+          }
+        })]
+      }, {
+        name: 'tab3',
+        title: _block_icons__WEBPACK_IMPORTED_MODULE_1__["default"].bplaptop,
+        className: 'zen-gut-tab-panel-tab',
+        content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Desktops")), wp.element.createElement("div", null, "Width equal or greater than 992px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
+          label: __('Height', 'zenbsblocks'),
+          min: 0,
+          max: 20,
+          allowReset: true,
+          resetFallbackValue: undefined,
+          value: props.attributes.paddingLGB,
+          onChange: new_val => {
+            props.setAttributes({
+              paddingLGB: new_val
+            });
+          }
+        })]
+      }, {
+        name: 'tab4',
+        title: _block_icons__WEBPACK_IMPORTED_MODULE_1__["default"].bpdesktop,
+        className: 'zen-gut-tab-panel-tab',
+        content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Large desktop")), wp.element.createElement("div", null, "Width equal or greater than 1200px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
+          label: __('Height', 'zenbsblocks'),
+          min: 0,
+          max: 20,
+          allowReset: true,
+          resetFallbackValue: undefined,
+          value: props.attributes.paddingXLB,
+          onChange: new_val => {
+            props.setAttributes({
+              paddingXLB: new_val
+            });
+          }
+        })]
+      }, {
+        name: 'tab5',
+        title: _block_icons__WEBPACK_IMPORTED_MODULE_1__["default"].bpdesktopxxl,
+        className: 'zen-gut-tab-panel-tab',
+        content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Larger desktop")), wp.element.createElement("div", null, "Width equal or greater than 1400px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
+          label: __('Height', 'zenbsblocks'),
+          min: 0,
+          max: 20,
+          allowReset: true,
+          resetFallbackValue: undefined,
+          value: props.attributes.paddingXXLB,
+          onChange: new_val => {
+            props.setAttributes({
+              paddingXXLB: new_val
+            });
+          }
+        })]
+      }]
+    }, tab => wp.element.createElement("p", null, tab.content))))), wp.element.createElement("div", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()([`${props.attributes.paddingB !== undefined ? `pb-${props.attributes.paddingB}` : ''}`], [`${props.attributes.paddingSMB !== undefined ? `pb-sm-${props.attributes.paddingSMB}` : ''}`], [`${props.attributes.paddingMDB !== undefined ? `pb-md-${props.attributes.paddingMDB}` : ''}`], [`${props.attributes.paddingLGB !== undefined ? `pb-lg-${props.attributes.paddingLGB}` : ''}`], [`${props.attributes.paddingXLB !== undefined ? `pb-xl-${props.attributes.paddingXLB}` : ''}`], [`${props.attributes.paddingXXLB !== undefined ? `pb-xxl-${props.attributes.paddingXXLB}` : ''}`])
+    })];
   },
   save: props => {
-    return wp.element.createElement("a", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()("btn", [`${props.attributes.btnStyle !== undefined ? `${props.attributes.btnStyle}` : ""}`], [`${props.attributes.btnSize !== undefined ? `${props.attributes.btnSize}` : ""}`], [`${props.attributes.btnWidth !== undefined ? `${props.attributes.btnWidth}` : ""}`]),
-      href: props.attributes.url,
-      target: props.attributes.href_target ? "_blank" : null,
-      rel: props.attributes.href_rel ? "noopener" : null
-    }, props.attributes.content);
+    const {
+      attributes
+    } = props;
+    return wp.element.createElement("div", {
+      "aria-hidden": "true",
+      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()([`${props.attributes.paddingB !== undefined ? `pb-${props.attributes.paddingB}` : ''}`], [`${props.attributes.paddingSMB !== undefined ? `pb-sm-${props.attributes.paddingSMB}` : ''}`], [`${props.attributes.paddingMDB !== undefined ? `pb-md-${props.attributes.paddingMDB}` : ''}`], [`${props.attributes.paddingLGB !== undefined ? `pb-lg-${props.attributes.paddingLGB}` : ''}`], [`${props.attributes.paddingXLB !== undefined ? `pb-xl-${props.attributes.paddingXLB}` : ''}`], [`${props.attributes.paddingXXLB !== undefined ? `pb-xxl-${props.attributes.paddingXXLB}` : ''}`])
+    });
   }
 });
 

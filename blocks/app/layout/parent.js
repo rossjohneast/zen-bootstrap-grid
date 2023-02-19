@@ -350,9 +350,11 @@ registerBlockType( 'zenbsblocks/section', {
                                     }}>
                     
                                     <InnerBlocks
-                                            allowedBlocks={ ['zenbsblocks/container'] }
+                                            allowedBlocks={ ['zenbsblocks/container', 'zenbsblocks/responsive-spacer'] }
                                             template={[
-                                                ['zenbsblocks/container']
+                                                ['zenbsblocks/responsive-spacer'],
+                                                ['zenbsblocks/container'],
+                                                ['zenbsblocks/responsive-spacer']
                                             ]}
                                         />  
 

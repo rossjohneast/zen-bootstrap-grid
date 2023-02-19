@@ -6,7 +6,9 @@ const { InnerBlocks,
     MediaUpload,
     MediaUploadCheck,
     PanelColorSettings } = wp.blockEditor;
-const { PanelBody, PanelRow,
+const {
+    PanelBody,
+    PanelRow,
     Button,
     RangeControl,
     SelectControl } = wp.components;
