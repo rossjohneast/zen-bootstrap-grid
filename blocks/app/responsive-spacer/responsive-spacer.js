@@ -22,7 +22,7 @@ registerBlockType("zenbsblocks/responsive-spacer", {
   attributes: {
     paddingB: {
       type: 'number',
-      default: 3
+      default: 5
     },
     paddingSMB: {
       type: 'number'
@@ -32,7 +32,7 @@ registerBlockType("zenbsblocks/responsive-spacer", {
     },
     paddingLGB: {
       type: 'number',
-      default: 5
+      default: 8
     },
     paddingXLB: {
       type: 'number'

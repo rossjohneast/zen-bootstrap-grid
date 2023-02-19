@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('wp-element'), 'version' => '45caf843446f21ccc859');
+<?php return array('dependencies' => array('wp-element'), 'version' => 'da6640394f97c9d3b3d5');
