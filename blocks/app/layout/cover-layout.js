@@ -37,7 +37,7 @@ registerBlockType("zenbsgridblocks/cover-layout", {
     const { attributes } = props;
 
     return (
-      <div>
+      <div className={props.className}>
          <InnerBlocks.Content />
       </div>
     )

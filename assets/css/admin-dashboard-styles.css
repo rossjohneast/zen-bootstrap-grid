@@ -74,7 +74,8 @@
     position: relative;
 }
 
-.editor-styles-wrapper .wp-block[data-type="zenbsgridblocks/responsive-spacer"] {
+.editor-styles-wrapper .wp-block[data-type="zenbsgridblocks/responsive-spacer"],
+.wp-block-zenbsgridblocks-cover-layout > .block-editor-inner-blocks  .wp-block-cover {
     border: rgba(125, 125, 125, .4) dashed 1px;
 }
 .editor-styles-wrapper .wp-block[data-type="zenbsgridblocks/responsive-spacer"]:focus {
