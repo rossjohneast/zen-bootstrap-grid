@@ -3,60 +3,60 @@
 //Register scripts
 
 /**
- * Add a block category for "zenbsblocks" if it doesn't exist already.
+ * Add a block category for "zenbsgridblocks" if it doesn't exist already.
  */
-function my_zenbsblocks_block_category( $categories, $post ) {
+function my_zenbsgridblocks_block_category( $categories, $post ) {
 	return array_merge(
 		$categories,
 		array(
 			array(
-				'slug' => 'zenbsblocks',
-				'title' => __( 'Zen Bootstrap Blocks', 'zenbsblocks' ),
+				'slug' => 'zenbsgridblocks',
+				'title' => __( 'Zen Bootstrap Grid', 'zenbsgridblocks' ),
 			),
 		)
 	);
 }
-add_filter( 'block_categories', 'my_zenbsblocks_block_category', 10, 2);
+add_filter( 'block_categories', 'my_zenbsgridblocks_block_category', 10, 2);
 
 // Update CSS within in Admin
 function admin_style() {
-    wp_enqueue_style('admin-styles', plugins_url('/assets/css/admin-dashboard-styles.css', ZEN_BS_BLOCKS_PLUGIN_URL));
+    wp_enqueue_style('admin-styles', plugins_url('/assets/css/admin-dashboard-styles.css', ZEN_BS_GRID_BLOCKS_PLUGIN_URL));
   }
   add_action('admin_enqueue_scripts', 'admin_style');
 
 //Bundle assets
-function z_enqueue_block_editor_assets(){
+function zenbsgridblocks_enqueue_block_editor_assets(){
 
     wp_register_script(
-        'z_blocks_bundle',
-        plugins_url('/blocks/build/index.js', ZEN_BS_BLOCKS_PLUGIN_URL),
+        'zenbsgridblocks_blocks_bundle',
+        plugins_url('/blocks/build/index.js', ZEN_BS_GRID_BLOCKS_PLUGIN_URL),
         [ 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-api' ],
-        plugin_dir_path( ZEN_BS_BLOCKS_PLUGIN_URL ) . '/blocks/build/index.js' 
+        plugin_dir_path( ZEN_BS_GRID_BLOCKS_PLUGIN_URL ) . '/blocks/build/index.js' 
     );
 
-    wp_enqueue_script( 'z_blocks_bundle' );
+    wp_enqueue_script( 'zenbsgridblocks_blocks_bundle' );
 
 }
 
-add_action('admin_enqueue_scripts','z_enqueue_block_editor_assets');
+add_action('admin_enqueue_scripts','zenbsgridblocks_enqueue_block_editor_assets');
 
 //Register Styles
-function z_enqueue_block_assets(){
+function zenbsgridblocks_enqueue_block_assets(){
     wp_register_style(
-        'z_blocks',
-        plugins_url('/blocks/dist/blocks-main.css', ZEN_BS_BLOCKS_PLUGIN_URL)
+        'zenbsgridblocks_blocks',
+        plugins_url('/blocks/dist/blocks-main.css', ZEN_BS_GRID_BLOCKS_PLUGIN_URL)
     );
-    wp_enqueue_style( 'z_blocks' );
+    wp_enqueue_style( 'zenbsgridblocks_blocks' );
 }
 
 
 //Register editor and front end block styles
-function z_enqueue_block_assets_ed_and_fe() 
+function zenbsgridblocks_enqueue_block_assets_ed_and_fe() 
 {
-    wp_enqueue_style( 'z_block_editor_and_fe_styles', plugins_url( '/blocks/dist/blocks-main.css', __FILE__ ) );
+    wp_enqueue_style( 'zenbsgridblocks_block_editor_and_fe_styles', plugins_url( '/blocks/dist/blocks-main.css', __FILE__ ) );
 }
 
-add_action('block_editor_and_fe_styles', 'z_enqueue_block_assets_ed_and_fe');
+add_action('block_editor_and_fe_styles', 'zenbsgridblocks_enqueue_block_assets_ed_and_fe');
 
 //Enqueue fonts
 

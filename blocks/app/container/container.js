@@ -17,10 +17,10 @@ const { Panel, PanelBody,
         RangeControl,
         SelectControl  }            = wp.components;
 
-registerBlockType( 'zenbsblocks/container', {
-    title:                              __( 'Container', 'zenbsblocks' ),
-    description:                        __( 'Containers are used to contain, pad, and (sometimes) center the rows within them. While containers can be nested, most layouts do not require a nested container.', 'zenbsblocks' ),
-    category:                           'zenbsblocks',
+registerBlockType( 'zenbsgridblocks/container', {
+    title:                              __( 'Container', 'zenbsgridblocks' ),
+    description:                        __( 'Containers are used to contain, pad, and (sometimes) center the rows within them. While containers can be nested, most layouts do not require a nested container.', 'zenbsgridblocks' ),
+    category:                           'zenbsgridblocks',
     icon:                               block_icons.div,
     attributes: {
         id:{
@@ -100,10 +100,10 @@ registerBlockType( 'zenbsblocks/container', {
         return [
             <InspectorControls>
                     <Panel>
-                        <PanelBody title={ __('Container Settings', 'zenbsblocks') } initialOpen={true}>
+                        <PanelBody title={ __('Container Settings', 'zenbsgridblocks') } initialOpen={true}>
 
                         <RangeControl
-                            label={__('Minimum height', 'zenbsblocks')}
+                            label={__('Minimum height', 'zenbsgridblocks')}
                             min={0}
                             max={2000}
                             step={5}
@@ -117,7 +117,7 @@ registerBlockType( 'zenbsblocks/container', {
 
                             <PanelRow className="w-100">
                                 <SelectControl
-                                    label={ __('Layout container width', 'zenbsblocks') }
+                                    label={ __('Layout container width', 'zenbsgridblocks') }
                                                 value={ props.attributes.layoutContainerOption }  
                                                 options={[
                                                     {value: 'container', label: 'container'},
@@ -134,7 +134,7 @@ registerBlockType( 'zenbsblocks/container', {
                             </PanelRow>
                             </PanelBody>
 
-                        <PanelBody title={__('Background image', 'zenbsblocks')} initialOpen={false} >
+                        <PanelBody title={__('Background image', 'zenbsgridblocks')} initialOpen={false} >
                 {!!attributes.backgroundImage == '' &&
                     <PanelRow className="w-100">
                         <MediaUploadCheck>
@@ -157,7 +157,7 @@ registerBlockType( 'zenbsblocks/container', {
                                 <div className="d-flex flex-wrap">
                                     <img src={attributes.backgroundImage} alt={__('Background image', 'image-selector-example')} />
                                     <Button className="components-button block-library-cover__reset-button is-secondary is-small" onClick={onRemoveImage} >
-                                        {__('Clear Media', 'zenbsblocks')}
+                                        {__('Clear Media', 'zenbsgridblocks')}
                                     </Button>
                                 </div>
                             </MediaUploadCheck></PanelRow>
@@ -165,7 +165,7 @@ registerBlockType( 'zenbsblocks/container', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background fixed', 'zenbsblocks')}
+                            label={__('Background fixed', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImageAttachment}
                             options={[
                                 { value: 'initial', label: 'Initial' },
@@ -178,7 +178,7 @@ registerBlockType( 'zenbsblocks/container', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Tint', 'zenbsblocks')}
+                            label={__('Background Tint', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImageTint}
                             options={[
                                 { value: '', label: 'Tint None' },
@@ -199,7 +199,7 @@ registerBlockType( 'zenbsblocks/container', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Size', 'zenbsblocks')}
+                            label={__('Background Size', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImageSize}
                             options={[
                                 { value: 'cover', label: 'Cover' },
@@ -214,7 +214,7 @@ registerBlockType( 'zenbsblocks/container', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Repeat', 'zenbsblocks')}
+                            label={__('Background Repeat', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImageRepeat}
                             options={[
                                 { value: 'repeat', label: 'Repeat' },
@@ -233,7 +233,7 @@ registerBlockType( 'zenbsblocks/container', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background image position', 'zenbsblocks')}
+                            label={__('Background image position', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImagePos}
                             options={[
                                 { value: 'center center', label: 'Center Center' },
@@ -263,9 +263,9 @@ registerBlockType( 'zenbsblocks/container', {
                 }}
                 >
                     <InnerBlocks
-                        allowedBlocks={ ['zenbsblocks/row'] }
+                        allowedBlocks={ ['zenbsgridblocks/row'] }
                         template={[
-                            ['zenbsblocks/row']
+                            ['zenbsgridblocks/row']
                         ]}
                     />  
                 </div>

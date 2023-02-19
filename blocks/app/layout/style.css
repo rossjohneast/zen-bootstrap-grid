@@ -1,4 +1,4 @@
-.wp-block-zenbsblocks-blocks-team-member__title {
+.wp-block-zenbsgridblocks-blocks-team-member__title {
   color: #222;
   font-size: 32px;
   font-weight: bold;
@@ -6,14 +6,14 @@
   display: block;
 }
 
-.wp-block-zenbsblocks-blocks-team-member__info {
+.wp-block-zenbsgridblocks-blocks-team-member__info {
   color: #565656;
   font-weight: 300;
   margin-bottom: 05px;
 }
 
-.wp-block-zenbsblocks-section .wp-block-zenbsblocks-col,
-.wp-block-zenbsblocks-layout-hero-slider .wp-block-zenbsblocks-col {
+.wp-block-zenbsgridblocks-section .wp-block-zenbsgridblocks-col,
+.wp-block-zenbsgridblocks-layout-hero-slider .wp-block-zenbsgridblocks-col {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,29 +28,29 @@
 
 
 
-.wp-block-zenbsblocks-section .container-fluid {
+.wp-block-zenbsgridblocks-section .container-fluid {
   padding-right: 0;
   padding-left: 0;
 }
 
-.wp-block-zenbsblocks-layout-hero-slider .slick-slide
-.wp-block-zenbsblocks-layout-hero-slider .slick-track,
-.wp-block-zenbsblocks-layout-hero-slider .slick-list {
+.wp-block-zenbsgridblocks-layout-hero-slider .slick-slide
+.wp-block-zenbsgridblocks-layout-hero-slider .slick-track,
+.wp-block-zenbsgridblocks-layout-hero-slider .slick-list {
   width: 100%;
 }
 
-.wp-block-zenbsblocks-card,
-.wp-block-zenbsblocks-card > .card {
+.wp-block-zenbsgridblocks-card,
+.wp-block-zenbsgridblocks-card > .card {
   height: 100%;
 }
 
-.wp-block-zenbsblocks-section > section,
-.wp-block-zenbsblocks-section > .col {
+.wp-block-zenbsgridblocks-section > section,
+.wp-block-zenbsgridblocks-section > .col {
   background-size: cover;
 }
 
 @media (max-width: 992px) {
-  div.wp-block-zenbsblocks-col[class^="col"] {
+  div.wp-block-zenbsgridblocks-col[class^="col"] {
     margin-bottom: 1rem;
   }
 }
@@ -64,20 +64,20 @@
 }
 
 @media (max-width: 576px) {
-  .wp-block-zenbsblocks-col.col:not(.col-1):not(.col-2):not(.col-3):not(.col-4):not(.col-5):not(.col-6):not(.col-7):not(.col-8):not(.col-9):not(.col-10):not(.col-11):not(.col-12) {
+  .wp-block-zenbsgridblocks-col.col:not(.col-1):not(.col-2):not(.col-3):not(.col-4):not(.col-5):not(.col-6):not(.col-7):not(.col-8):not(.col-9):not(.col-10):not(.col-11):not(.col-12) {
     -ms-flex-preferred-size: auto;
   flex-basis: auto;
     width: 100%;
   }
 }
 
-.wp-block-zenbsblocks-col.col {
+.wp-block-zenbsgridblocks-col.col {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.wp-block-zenbsblocks-col-break {
+.wp-block-zenbsgridblocks-col-break {
   height: 0;
 }
 

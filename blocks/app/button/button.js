@@ -12,10 +12,10 @@ const { Panel, PanelBody,
 
 import classnames from 'classnames';
 import sharedAnimationsInspCnt from '../shared/animation/aos-insp-cnt.js';
-registerBlockType( 'zenbsblocks/button', {
-    title:                              __( 'Button', 'zenbsblocks' ),
-    description:                        __( 'Button with support for multiple sizes, states, and more.', 'zenbsblocks' ),
-    category:                           'zenbsblocks',
+registerBlockType( 'zenbsgridblocks/button', {
+    title:                              __( 'Button', 'zenbsgridblocks' ),
+    description:                        __( 'Button with support for multiple sizes, states, and more.', 'zenbsgridblocks' ),
+    category:                           'zenbsgridblocks',
     icon:                               block_icons.button,
     attributes: {
         id:{
@@ -89,7 +89,7 @@ registerBlockType( 'zenbsblocks/button', {
         return [
             <InspectorControls>
                     <Panel>
-                        <PanelBody title={ __('Button Settings', 'zenbsblocks') }>
+                        <PanelBody title={ __('Button Settings', 'zenbsgridblocks') }>
 
                         <PanelRow>
                             <div className="w-100">
@@ -98,13 +98,13 @@ registerBlockType( 'zenbsblocks/button', {
                                     onSubmit={(event) => event.preventDefault()}
                                 >
                                     <URLInput
-                                        label={__('URL Search', 'zenbsblocks')}
+                                        label={__('URL Search', 'zenbsgridblocks')}
                                         value={props.attributes.url}
                                         onChange={(new_val) =>
                                             props.setAttributes({ url: new_val })
                                         }
                                     />
-                                    <Button type="submit" label={__('Add link', 'zenbsblocks')} isPrimary>Add link</Button>
+                                    <Button type="submit" label={__('Add link', 'zenbsgridblocks')} isPrimary>Add link</Button>
                                 </form>
                             </div>
                         </PanelRow>
@@ -113,11 +113,11 @@ registerBlockType( 'zenbsblocks/button', {
 
                         <PanelRow>
                             <div className="w-100">
-                            <FormToggle id='zenbsblocks-card-target-toggle'
+                            <FormToggle id='zenbsgridblocks-card-target-toggle'
                                     checked={props.attributes.href_target}
                                     onChange={toggle_btnlink_target} /> &nbsp;
-                                <label htmlFor="zenbsblocks-card-target-toggle">
-                                    {__('Open link in new window?', 'zenbsblocks')}
+                                <label htmlFor="zenbsgridblocks-card-target-toggle">
+                                    {__('Open link in new window?', 'zenbsgridblocks')}
                                 </label>
 
                             </div>
@@ -125,7 +125,7 @@ registerBlockType( 'zenbsblocks/button', {
 
                             <PanelRow  className={"components-panel-children-w-100"}>
                                 <SelectControl
-                                        label={ __('Button Style (Color)', 'zenbsblocks') }
+                                        label={ __('Button Style (Color)', 'zenbsgridblocks') }
                                         value={ props.attributes.btnStyle }  
                                         options={[
                                             {value: 'btn-primary', label: 'Default'},
@@ -155,7 +155,7 @@ registerBlockType( 'zenbsblocks/button', {
 
                             <PanelRow  className={"components-panel-children-w-100"}>
                                 <SelectControl
-                                        label={ __('Button Size', 'zenbsblocks') }
+                                        label={ __('Button Size', 'zenbsgridblocks') }
                                         value={ props.attributes.btnSize }  
                                         options={[
                                             {value: '', label: 'Default'},
@@ -169,7 +169,7 @@ registerBlockType( 'zenbsblocks/button', {
 
                             <PanelRow  className={"components-panel-children-w-100"}>
                                 <SelectControl
-                                        label={ __('Button Width', 'zenbsblocks') }
+                                        label={ __('Button Width', 'zenbsgridblocks') }
                                         value={ props.attributes.btnWidth }  
                                         options={[
                                             {value: '', label: 'Default'},
@@ -198,7 +198,7 @@ registerBlockType( 'zenbsblocks/button', {
 
                         placeholder={ __(
                             'Add button text and link',
-                            'zenbsblocks'
+                            'zenbsgridblocks'
                         ) }
                         value={ props.attributes.content }
                         onChange={ ( new_val ) =>

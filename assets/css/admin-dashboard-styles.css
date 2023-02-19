@@ -1,5 +1,5 @@
 /* ADMIN DASHBOARD BACK END STYLES */
-/* Custom dashboard styles for the zenbsblocks plugin */
+/* Custom dashboard styles for the zenbsgridblocks plugin */
 
 @import url('blocks/admin-responsive-spacer.css');
 
@@ -74,10 +74,10 @@
     position: relative;
 }
 
-.editor-styles-wrapper .wp-block[data-type="zenbsblocks/responsive-spacer"] {
+.editor-styles-wrapper .wp-block[data-type="zenbsgridblocks/responsive-spacer"] {
     border: rgba(125, 125, 125, .4) dashed 1px;
 }
-.editor-styles-wrapper .wp-block[data-type="zenbsblocks/responsive-spacer"]:focus {
+.editor-styles-wrapper .wp-block[data-type="zenbsgridblocks/responsive-spacer"]:focus {
     background: rgba(0,0,0,.1);
 }
 

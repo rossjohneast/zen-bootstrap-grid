@@ -349,10 +349,10 @@ const attributes = {
     },
 }
 
-registerBlockType('zenbsblocks/row', {
-    title: __('Row', 'zenbsblocks'),
-    description: __('Contains columns. Min 1 column, max 12 columns. Sets gutters.', 'zenbsblocks'),
-    category: 'zenbsblocks',
+registerBlockType('zenbsgridblocks/row', {
+    title: __('Row', 'zenbsgridblocks'),
+    description: __('Contains columns. Min 1 column, max 12 columns. Sets gutters.', 'zenbsgridblocks'),
+    category: 'zenbsgridblocks',
     icon: block_icons.row,
 
     attributes,
@@ -397,11 +397,11 @@ registerBlockType('zenbsblocks/row', {
 
         return [
             <InspectorControls>
-                <PanelBody title={__('Row quick settings', 'zenbsblocks')}>
+                <PanelBody title={__('Row quick settings', 'zenbsgridblocks')}>
 
 
                     <RangeControl
-                        label={__('Minimum height', 'zenbsblocks')}
+                        label={__('Minimum height', 'zenbsgridblocks')}
                         min={0}
                         max={2000}
                         step={5}
@@ -413,7 +413,7 @@ registerBlockType('zenbsblocks/row', {
                         }} />
 
                     <RangeControl
-                        label={__('Column Gutter Width', 'zenbsblocks')}
+                        label={__('Column Gutter Width', 'zenbsgridblocks')}
                         min={0}
                         max={4}
                         help={"Space between content columns"}
@@ -425,7 +425,7 @@ registerBlockType('zenbsblocks/row', {
                         }} />
 
                     <RangeControl
-                        label={__('Margin Bottom (Desktop)', 'zenbsblocks')}
+                        label={__('Margin Bottom (Desktop)', 'zenbsgridblocks')}
                         min={0}
                         max={5}
                         allowReset={true}
@@ -437,10 +437,10 @@ registerBlockType('zenbsblocks/row', {
 
 
 </PanelBody>
-                    <PanelBody title={__('Content Display Settings', 'zenbsblocks')} initialOpen={false}>
+                    <PanelBody title={__('Content Display Settings', 'zenbsgridblocks')} initialOpen={false}>
                 <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Display', 'zenbsblocks')}
+                            label={__('Display', 'zenbsgridblocks')}
                             value={props.attributes.display}
                             options={[
                                 { value: 'd-flex', label: 'Flex' },
@@ -462,7 +462,7 @@ registerBlockType('zenbsblocks/row', {
                     
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Align Div Text', 'zenbsblocks')}
+                            label={__('Align Div Text', 'zenbsgridblocks')}
                             value={props.attributes.textAlign}
                             options={[
                                 { value: 'text-left', label: 'Left' },
@@ -476,7 +476,7 @@ registerBlockType('zenbsblocks/row', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Align Column Content', 'zenbsblocks')}
+                            label={__('Align Column Content', 'zenbsgridblocks')}
                             value={props.attributes.alignItems}
                             options={[
                                 { value: 'align-items-start', label: 'Start' },
@@ -492,7 +492,7 @@ registerBlockType('zenbsblocks/row', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Justify Column Content', 'zenbsblocks')}
+                            label={__('Justify Column Content', 'zenbsgridblocks')}
                             value={props.attributes.justifyContent}
                             options={[
                                 { value: 'justify-content-start', label: 'Start' },
@@ -509,10 +509,10 @@ registerBlockType('zenbsblocks/row', {
                     </PanelBody>
 
 
-                <PanelBody title={__('Bootstrap colors', 'zenbsblocks')} initialOpen={false}>
+                <PanelBody title={__('Bootstrap colors', 'zenbsgridblocks')} initialOpen={false}>
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Color', 'zenbsblocks')}
+                            label={__('Background Color', 'zenbsgridblocks')}
                             value={props.attributes.backgroundColorTheme}
                             options={[
                                 { value: '', label: 'Default (None)' },
@@ -532,7 +532,7 @@ registerBlockType('zenbsblocks/row', {
                     </PanelRow>
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Text Color', 'zenbsblocks')}
+                            label={__('Text Color', 'zenbsgridblocks')}
                             value={props.attributes.textColorTheme}
                             options={[
                                 { value: '', label: 'Default' },
@@ -553,7 +553,7 @@ registerBlockType('zenbsblocks/row', {
                 </PanelBody>
 
                 <PanelColorSettings
-                    title={__('Custom color Settings', 'zenbsblocks')} initialOpen={false}
+                    title={__('Custom color Settings', 'zenbsgridblocks')} initialOpen={false}
                     colorSettings={[
                         {
                             value: backgroundColor,
@@ -570,7 +570,7 @@ registerBlockType('zenbsblocks/row', {
 
                 </PanelColorSettings>
 
-                <PanelBody title={__('Background image', 'zenbsblocks')} initialOpen={false} >
+                <PanelBody title={__('Background image', 'zenbsgridblocks')} initialOpen={false} >
                 {!!attributes.backgroundImage == '' &&
                     <PanelRow className="w-100">
                         <MediaUploadCheck>
@@ -593,7 +593,7 @@ registerBlockType('zenbsblocks/row', {
                                 <div className="d-flex flex-wrap">
                                     <img src={attributes.backgroundImage} alt={__('Background image', 'image-selector-example')} />
                                     <Button className="components-button block-library-cover__reset-button is-secondary is-small" onClick={onRemoveImage} >
-                                        {__('Clear Media', 'zenbsblocks')}
+                                        {__('Clear Media', 'zenbsgridblocks')}
                                     </Button>
                                 </div>
                             </MediaUploadCheck></PanelRow>
@@ -601,7 +601,7 @@ registerBlockType('zenbsblocks/row', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background fixed', 'zenbsblocks')}
+                            label={__('Background fixed', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImageAttachment}
                             options={[
                                 { value: 'initial', label: 'Initial' },
@@ -614,7 +614,7 @@ registerBlockType('zenbsblocks/row', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Tint', 'zenbsblocks')}
+                            label={__('Background Tint', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImageTint}
                             options={[
                                 { value: '', label: 'Tint None' },
@@ -635,7 +635,7 @@ registerBlockType('zenbsblocks/row', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Size', 'zenbsblocks')}
+                            label={__('Background Size', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImageSize}
                             options={[
                                 { value: 'cover', label: 'Cover' },
@@ -650,7 +650,7 @@ registerBlockType('zenbsblocks/row', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Repeat', 'zenbsblocks')}
+                            label={__('Background Repeat', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImageRepeat}
                             options={[
                                 { value: 'repeat', label: 'Repeat' },
@@ -669,7 +669,7 @@ registerBlockType('zenbsblocks/row', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background image position', 'zenbsblocks')}
+                            label={__('Background image position', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImagePos}
                             options={[
                                 { value: 'center center', label: 'Center Center' },
@@ -714,10 +714,10 @@ registerBlockType('zenbsblocks/row', {
                     ...BackgroundIsActive
                 }}>
                 <InnerBlocks
-                    allowedBlocks={['zenbsblocks/col']}
+                    allowedBlocks={['zenbsgridblocks/col']}
                     template={[
-                        ['zenbsblocks/col'],
-                        ['zenbsblocks/col']
+                        ['zenbsgridblocks/col'],
+                        ['zenbsgridblocks/col']
                     ]}
                 />
 

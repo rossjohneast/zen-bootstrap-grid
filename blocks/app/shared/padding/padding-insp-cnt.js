@@ -7,7 +7,7 @@ const { RangeControl ,TabPanel,
 const sharedPaddingInspCnt = (props) => {
     return(
 
-        <PanelBody title={__('Padding', 'zenbsblocks')} initialOpen={false} >
+        <PanelBody title={__('Padding', 'zenbsgridblocks')} initialOpen={false} >
 
         <div className="zen-gut-panel-help">
             <p>The smaller grid settings also apply to larger screens unless overriden specifically for larger screens.
@@ -31,7 +31,7 @@ const sharedPaddingInspCnt = (props) => {
                             </div>,
 
                             <RangeControl
-                                label={__('Padding', 'zenbsblocks')}
+                                label={__('Padding', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -42,7 +42,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Top', 'zenbsblocks')}
+                                label={__('Padding Top', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -53,7 +53,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Bottom', 'zenbsblocks')}
+                                label={__('Padding Bottom', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -64,7 +64,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Left', 'zenbsblocks')}
+                                label={__('Padding Left', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -75,7 +75,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Right', 'zenbsblocks')}
+                                label={__('Padding Right', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -86,7 +86,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding X', 'zenbsblocks')}
+                                label={__('Padding X', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -97,7 +97,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Y', 'zenbsblocks')}
+                                label={__('Padding Y', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -121,7 +121,7 @@ const sharedPaddingInspCnt = (props) => {
                             </div>,
 
                             <RangeControl
-                                label={__('Padding', 'zenbsblocks')}
+                                label={__('Padding', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -132,7 +132,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Top', 'zenbsblocks')}
+                                label={__('Padding Top', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -143,7 +143,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Bottom', 'zenbsblocks')}
+                                label={__('Padding Bottom', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -154,7 +154,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Left', 'zenbsblocks')}
+                                label={__('Padding Left', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -165,7 +165,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Right', 'zenbsblocks')}
+                                label={__('Padding Right', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -176,7 +176,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding X', 'zenbsblocks')}
+                                label={__('Padding X', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -187,7 +187,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Y', 'zenbsblocks')}
+                                label={__('Padding Y', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -212,7 +212,7 @@ const sharedPaddingInspCnt = (props) => {
                             </div>,
 
                             <RangeControl
-                                label={__('Padding', 'zenbsblocks')}
+                                label={__('Padding', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -223,7 +223,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Top', 'zenbsblocks')}
+                                label={__('Padding Top', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -234,7 +234,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Bottom', 'zenbsblocks')}
+                                label={__('Padding Bottom', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -245,7 +245,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Left', 'zenbsblocks')}
+                                label={__('Padding Left', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -256,7 +256,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Right', 'zenbsblocks')}
+                                label={__('Padding Right', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -267,7 +267,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding X', 'zenbsblocks')}
+                                label={__('Padding X', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -278,7 +278,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Y', 'zenbsblocks')}
+                                label={__('Padding Y', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -303,7 +303,7 @@ const sharedPaddingInspCnt = (props) => {
                             </div>,   
 
                             <RangeControl
-                                label={__('Padding', 'zenbsblocks')}
+                                label={__('Padding', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -314,7 +314,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Top', 'zenbsblocks')}
+                                label={__('Padding Top', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -325,7 +325,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Bottom', 'zenbsblocks')}
+                                label={__('Padding Bottom', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -336,7 +336,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Left', 'zenbsblocks')}
+                                label={__('Padding Left', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -347,7 +347,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Right', 'zenbsblocks')}
+                                label={__('Padding Right', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -358,7 +358,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding X', 'zenbsblocks')}
+                                label={__('Padding X', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -369,7 +369,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Y', 'zenbsblocks')}
+                                label={__('Padding Y', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -396,7 +396,7 @@ const sharedPaddingInspCnt = (props) => {
 
 
                             <RangeControl
-                                label={__('Padding', 'zenbsblocks')}
+                                label={__('Padding', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -407,7 +407,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Top', 'zenbsblocks')}
+                                label={__('Padding Top', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -418,7 +418,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Bottom', 'zenbsblocks')}
+                                label={__('Padding Bottom', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -429,7 +429,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Left', 'zenbsblocks')}
+                                label={__('Padding Left', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -440,7 +440,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Right', 'zenbsblocks')}
+                                label={__('Padding Right', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -451,7 +451,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding X', 'zenbsblocks')}
+                                label={__('Padding X', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -462,7 +462,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Y', 'zenbsblocks')}
+                                label={__('Padding Y', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -486,7 +486,7 @@ const sharedPaddingInspCnt = (props) => {
                         </div>, 
 
                             <RangeControl
-                                label={__('Padding', 'zenbsblocks')}
+                                label={__('Padding', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -497,7 +497,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Top', 'zenbsblocks')}
+                                label={__('Padding Top', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -508,7 +508,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Bottom', 'zenbsblocks')}
+                                label={__('Padding Bottom', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -519,7 +519,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Left', 'zenbsblocks')}
+                                label={__('Padding Left', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -530,7 +530,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Right', 'zenbsblocks')}
+                                label={__('Padding Right', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -541,7 +541,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding X', 'zenbsblocks')}
+                                label={__('Padding X', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}
@@ -552,7 +552,7 @@ const sharedPaddingInspCnt = (props) => {
                                 }} />,
 
                             <RangeControl
-                                label={__('Padding Y', 'zenbsblocks')}
+                                label={__('Padding Y', 'zenbsgridblocks')}
                                 min={0}
                                 max={5}
                                 allowReset={true}

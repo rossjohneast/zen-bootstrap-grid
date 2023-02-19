@@ -23,11 +23,11 @@ const sharedAnimationsInspCnt = (props) => {
 
     return (
 
-        <PanelBody title={__('Animations', 'zenbsblocks')} initialOpen={false} >
+        <PanelBody title={__('Animations', 'zenbsgridblocks')} initialOpen={false} >
 
             <PanelRow className={"components-panel-children-w-100"}>
                 <SelectControl
-                    label={__('Animation', 'zenbsblocks')}
+                    label={__('Animation', 'zenbsgridblocks')}
                     value={props.attributes.animation}
                     options={[
                         { value: '', label: 'Default (None)' },
@@ -66,7 +66,7 @@ const sharedAnimationsInspCnt = (props) => {
 
             <PanelRow className={"components-panel-children-w-100"}>
                 <SelectControl
-                    label={__('Easing', 'zenbsblocks')}
+                    label={__('Easing', 'zenbsgridblocks')}
                     value={props.attributes.animationEasing}
                     options={[
                         { value: '', label: 'Default' },
@@ -98,7 +98,7 @@ const sharedAnimationsInspCnt = (props) => {
 
             <PanelRow className={"components-panel-children-w-100"}>
                 <SelectControl
-                    label={__('Anchor placement', 'zenbsblocks')}
+                    label={__('Anchor placement', 'zenbsgridblocks')}
                     value={props.attributes.animationPlacement}
                     options={[
                         { value: '', label: 'Default' },
@@ -118,8 +118,8 @@ const sharedAnimationsInspCnt = (props) => {
             </PanelRow>
 
             <RangeControl
-                label={__('Offset', 'zenbsblocks')}
-                help={__('Offset (in px) from the original trigger point', 'zenbsblocks')}
+                label={__('Offset', 'zenbsgridblocks')}
+                help={__('Offset (in px) from the original trigger point', 'zenbsgridblocks')}
                 min={0}
                 max={3000}
                 step={1}
@@ -132,7 +132,7 @@ const sharedAnimationsInspCnt = (props) => {
                 }} />
 
             <RangeControl
-                label={__('Duration', 'zenbsblocks')}
+                label={__('Duration', 'zenbsgridblocks')}
                 min={400}
                 max={3000}
                 step={50}
@@ -145,7 +145,7 @@ const sharedAnimationsInspCnt = (props) => {
                 }} />
 
             <RangeControl
-                label={__('Delay', 'zenbsblocks')}
+                label={__('Delay', 'zenbsgridblocks')}
                 min={0}
                 max={3000}
                 step={50}
@@ -157,11 +157,11 @@ const sharedAnimationsInspCnt = (props) => {
 
             <PanelRow>
                 <div className="w-100">
-                    <FormToggle id='zenbsblocks-card-target-toggle'
+                    <FormToggle id='zenbsgridblocks-card-target-toggle'
                         checked={props.attributes.animationOnce}
                         onChange={toggle_animation_once} />&nbsp;
-                    <label htmlFor="zenbsblocks-card-target-toggle">
-                        {__('Once', 'zenbsblocks')}
+                    <label htmlFor="zenbsgridblocks-card-target-toggle">
+                        {__('Once', 'zenbsgridblocks')}
                     </label>
 
                 </div>
@@ -169,11 +169,11 @@ const sharedAnimationsInspCnt = (props) => {
 
             <PanelRow>
                 <div className="w-100">
-                    <FormToggle id='zenbsblocks-card-target-toggle'
+                    <FormToggle id='zenbsgridblocks-card-target-toggle'
                         checked={props.attributes.animationMirror}
                         onChange={toggle_animation_mirror} /> &nbsp;
-                    <label htmlFor="zenbsblocks-card-target-toggle">
-                        {__('Mirror', 'zenbsblocks')}
+                    <label htmlFor="zenbsgridblocks-card-target-toggle">
+                        {__('Mirror', 'zenbsgridblocks')}
                     </label>
 
                 </div>

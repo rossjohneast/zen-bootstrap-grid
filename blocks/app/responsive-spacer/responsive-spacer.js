@@ -10,10 +10,10 @@ const {
 } = wp.components;
 
 import classnames from "classnames";
-registerBlockType("zenbsblocks/responsive-spacer", {
-  title: __("Responsive spacer", "zenbsblocks"),
-  description: __("Responsive vertical spacer.", "zenbsblocks"),
-  category: "zenbsblocks",
+registerBlockType("zenbsgridblocks/responsive-spacer", {
+  title: __("Responsive spacer", "zenbsgridblocks"),
+  description: __("Responsive vertical spacer.", "zenbsgridblocks"),
+  category: "zenbsgridblocks",
   icon: 
     {
       src: <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true" focusable="false"><path d="M12.5 4.2v1.6h4.7L5.8 17.2V12H4.2v7.8H12v-1.6H6.8L18.2 6.8v4.7h1.6V4.2z"></path></svg>
@@ -49,7 +49,7 @@ registerBlockType("zenbsblocks/responsive-spacer", {
     return [
       <InspectorControls>
         <Panel>
-        <PanelBody title={__('Height', 'zenbsblocks')} initialOpen={true} >
+        <PanelBody title={__('Height', 'zenbsgridblocks')} initialOpen={true} >
 
         <div className="zen-gut-panel-help">
             <p>
@@ -73,7 +73,7 @@ registerBlockType("zenbsblocks/responsive-spacer", {
                             </div>,
 
                             <RangeControl
-                                label={__('Height', 'zenbsblocks')}
+                                label={__('Height', 'zenbsgridblocks')}
                                 min={0}
                                 max={20}
                                 allowReset={true}
@@ -99,7 +99,7 @@ registerBlockType("zenbsblocks/responsive-spacer", {
                             </div>,
 
                             <RangeControl
-                                label={__('Height', 'zenbsblocks')}
+                                label={__('Height', 'zenbsgridblocks')}
                                 min={0}
                                 max={20}
                                 allowReset={true}
@@ -126,7 +126,7 @@ registerBlockType("zenbsblocks/responsive-spacer", {
                             </div>,
 
                             <RangeControl
-                                label={__('Height', 'zenbsblocks')}
+                                label={__('Height', 'zenbsgridblocks')}
                                 min={0}
                                 max={20}
                                 allowReset={true}
@@ -153,7 +153,7 @@ registerBlockType("zenbsblocks/responsive-spacer", {
                             </div>,   
 
                             <RangeControl
-                                label={__('Height', 'zenbsblocks')}
+                                label={__('Height', 'zenbsgridblocks')}
                                 min={0}
                                 max={20}
                                 allowReset={true}
@@ -182,7 +182,7 @@ registerBlockType("zenbsblocks/responsive-spacer", {
 
 
                             <RangeControl
-                                label={__('Height', 'zenbsblocks')}
+                                label={__('Height', 'zenbsgridblocks')}
                                 min={0}
                                 max={20}
                                 allowReset={true}
@@ -208,7 +208,7 @@ registerBlockType("zenbsblocks/responsive-spacer", {
                         </div>, 
 
                             <RangeControl
-                                label={__('Height', 'zenbsblocks')}
+                                label={__('Height', 'zenbsgridblocks')}
                                 min={0}
                                 max={20}
                                 allowReset={true}

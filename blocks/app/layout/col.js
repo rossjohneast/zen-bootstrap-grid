@@ -25,6 +25,9 @@ import sharedColWidthClassnames from '../shared/col/colwidth-classnames.js';
 import sharedColOffsetsClassnames from '../shared/col/coloffsets-classnames.js';
 import sharedAnimationsInspCnt from '../shared/animation/aos-insp-cnt.js';
 const attributes = {
+    display: {
+        type: 'string'
+    },
     minHeightCol: {
         type: 'number'
     },
@@ -415,12 +418,12 @@ const withClientIdClassNameBlockSec = createHigherOrderComponent((BlockListBlock
     };
 }, 'withClientIdClassNameBlockSec');
 
-wp.hooks.addFilter('editor.BlockListBlock', 'zenbsblocks/section', withClientIdClassNameBlockSec);
+wp.hooks.addFilter('editor.BlockListBlock', 'zenbsgridblocks/section', withClientIdClassNameBlockSec);
 
-registerBlockType('zenbsblocks/col', {
-    title: __('Column', 'zenbsblocks'),
-    description: __('Use to layout content inside rows. Columns auto size to fill space.', 'zenbsblocks'),
-    category: 'zenbsblocks',
+registerBlockType('zenbsgridblocks/col', {
+    title: __('Column', 'zenbsgridblocks'),
+    description: __('Use to layout content inside rows. Columns auto size to fill space.', 'zenbsgridblocks'),
+    category: 'zenbsgridblocks',
     icon: block_icons.column,
     attributes,
 
@@ -489,10 +492,10 @@ registerBlockType('zenbsblocks/col', {
         return [
             <InspectorControls>
 
-                <PanelBody title={__('Column quick settings', 'zenbsblocks')}>
+                <PanelBody title={__('Column quick settings', 'zenbsgridblocks')}>
 
                     <RangeControl
-                        label={__('Column Width LG (Desktop and up)', 'zenbsblocks')}
+                        label={__('Column Width LG (Desktop and up)', 'zenbsgridblocks')}
 
                         min={0}
                         max={12}
@@ -506,7 +509,7 @@ registerBlockType('zenbsblocks/col', {
                         }} />
 
 <RangeControl
-                        label={ __( 'Min height', 'zenbsblocks' ) }
+                        label={ __( 'Min height', 'zenbsgridblocks' ) }
                         min={ 0 }
                         max={ 2000 }
                         step={ 5 }
@@ -518,7 +521,7 @@ registerBlockType('zenbsblocks/col', {
                         }} />
 
 <RangeControl
-                        label={__('Margin Bottom LG (Desktop and up)', 'zenbsblocks')}
+                        label={__('Margin Bottom LG (Desktop and up)', 'zenbsgridblocks')}
                         min={0}
                         max={5}
                         allowReset={true}
@@ -529,7 +532,7 @@ registerBlockType('zenbsblocks/col', {
                         }} />
 
                     <RangeControl
-                        label={__('Padding', 'zenbsblocks')}
+                        label={__('Padding', 'zenbsgridblocks')}
                         min={0}
                         max={5}
                         allowReset={true}
@@ -542,11 +545,32 @@ registerBlockType('zenbsblocks/col', {
 
 
                     </PanelBody>
-                    <PanelBody title={__('Content Display Settings', 'zenbsblocks')} initialOpen={false}>
+                    <PanelBody title={__('Content Display Settings', 'zenbsgridblocks')} initialOpen={false}>
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Align Column Text', 'zenbsblocks')}
+                            label={__('Display', 'zenbsgridblocks')}
+                            value={props.attributes.display}
+                            options={[
+                                { value: 'd-block', label: 'Block' },
+                                { value: 'd-none', label: 'None' },
+                                { value: 'd-inline', label: 'Inline' },
+                                { value: 'd-inline-block', label: 'Inline-block' },
+                                { value: 'd-grid', label: 'Grid' },
+                                { value: 'd-table', label: 'Table' },
+                                { value: 'd-table-cell', label: 'Table-cell' },
+                                { value: 'd-table-row', label: 'Table-row' },
+                                { value: 'd-flex', label: 'Flex' },
+                                { value: 'd-inline-flex', label: 'Inline-flex' },
+                            ]}
+                            onChange={(new_val) => {
+                                props.setAttributes({ display: new_val })
+                            }} />
+                    </PanelRow>
+
+                    <PanelRow className="w-100">
+                        <SelectControl
+                            label={__('Align Column Text', 'zenbsgridblocks')}
                             value={props.attributes.textAlign}
                             options={[
                                 { value: 'text-left', label: 'Left' },
@@ -560,7 +584,7 @@ registerBlockType('zenbsblocks/col', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Align Column Content', 'zenbsblocks')}
+                            label={__('Align Column Content', 'zenbsgridblocks')}
                             value={props.attributes.alignItems}
                             options={[
                                 { value: 'align-items-start', label: 'Start' },
@@ -576,7 +600,7 @@ registerBlockType('zenbsblocks/col', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Justify Column Content', 'zenbsblocks')}
+                            label={__('Justify Column Content', 'zenbsgridblocks')}
                             value={props.attributes.justifyContent}
                             options={[
                                 { value: 'justify-content-start', label: 'Start' },
@@ -596,10 +620,10 @@ registerBlockType('zenbsblocks/col', {
                 </PanelBody>
 
 
-                <PanelBody title={__('Bootstrap Colors', 'zenbsblocks')} initialOpen={false}>
+                <PanelBody title={__('Bootstrap Colors', 'zenbsgridblocks')} initialOpen={false}>
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Color', 'zenbsblocks')}
+                            label={__('Background Color', 'zenbsgridblocks')}
                             value={props.attributes.backgroundColorTheme}
                             options={[
                                 { value: '', label: 'Default (None)' },
@@ -620,7 +644,7 @@ registerBlockType('zenbsblocks/col', {
                     <PanelRow className="w-100">
                         <SelectControl
                             value={props.attributes.textColorTheme}
-                            label={__('Text Color', 'zenbsblocks')}
+                            label={__('Text Color', 'zenbsgridblocks')}
                             options={[
                                 { value: '', label: 'Default' },
                                 { value: 'text-primary', label: 'Primary' },
@@ -640,7 +664,7 @@ registerBlockType('zenbsblocks/col', {
                 </PanelBody>
 
                 <PanelColorSettings
-                    title={__('Custom colors', 'zenbsblocks')} initialOpen={false}
+                    title={__('Custom colors', 'zenbsgridblocks')} initialOpen={false}
                     colorSettings={[
                         {
                             value: backgroundColor,
@@ -657,7 +681,7 @@ registerBlockType('zenbsblocks/col', {
 
                 </PanelColorSettings>
 
-                <PanelBody title={__('Background image', 'zenbsblocks')} initialOpen={false} >
+                <PanelBody title={__('Background image', 'zenbsgridblocks')} initialOpen={false} >
                 {!!attributes.backgroundImage == '' &&
                     <PanelRow>
                         <MediaUploadCheck>
@@ -681,7 +705,7 @@ registerBlockType('zenbsblocks/col', {
                                 <div className="d-flex flex-wrap">
                                     <img src={attributes.backgroundImage} alt={__('Background image', 'image-selector-example')} />
                                     <Button className="components-button block-library-cover__reset-button is-secondary is-small" onClick={onRemoveImage}>
-                                        {__('Clear Media', 'zenbsblocks')}
+                                        {__('Clear Media', 'zenbsgridblocks')}
                                     </Button>
                                 </div>
                             </MediaUploadCheck>
@@ -690,7 +714,7 @@ registerBlockType('zenbsblocks/col', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Fixed', 'zenbsblocks')}
+                            label={__('Background Fixed', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImageAttachment}
                             options={[
                                 { value: 'initial', label: 'Initial' },
@@ -703,7 +727,7 @@ registerBlockType('zenbsblocks/col', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Tint', 'zenbsblocks')}
+                            label={__('Background Tint', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImageTint}
                             options={[
                                 { value: '', label: 'Tint None' },
@@ -724,7 +748,7 @@ registerBlockType('zenbsblocks/col', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Size', 'zenbsblocks')}
+                            label={__('Background Size', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImageSize}
                             options={[
                                 { value: 'cover', label: 'Cover' },
@@ -739,7 +763,7 @@ registerBlockType('zenbsblocks/col', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Repeat', 'zenbsblocks')}
+                            label={__('Background Repeat', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImageRepeat}
                             options={[
                                 { value: 'repeat', label: 'Repeat' },
@@ -758,7 +782,7 @@ registerBlockType('zenbsblocks/col', {
 
                     <PanelRow className="w-100">
                         <SelectControl
-                            label={__('Background Image Position', 'zenbsblocks')}
+                            label={__('Background Image Position', 'zenbsgridblocks')}
                             value={props.attributes.backgroundImagePos}
                             options={[
                                 { value: 'center center', label: 'Center Center' },
@@ -776,7 +800,7 @@ registerBlockType('zenbsblocks/col', {
                     </PanelRow>
                 </PanelBody>
 
-                <PanelBody title={__('Width', 'zenbsblocks')} initialOpen={false}  >
+                <PanelBody title={__('Width', 'zenbsgridblocks')} initialOpen={false}  >
 
                 <div className="zen-gut-panel-help">
                 <p>The smaller grid settings also apply to larger screens unless overriden specifically for larger screens.
@@ -950,7 +974,7 @@ registerBlockType('zenbsblocks/col', {
 
                 </PanelBody>
 
-                <PanelBody title={__('Offset', 'zenbsblocks')} initialOpen={false}  >
+                <PanelBody title={__('Offset', 'zenbsgridblocks')} initialOpen={false}  >
 
 
                 <div className="zen-gut-panel-help">
@@ -975,7 +999,7 @@ registerBlockType('zenbsblocks/col', {
                                         </div>,
 
 <RangeControl
-label={__('Offset left', 'zenbsblocks')}
+label={__('Offset left', 'zenbsgridblocks')}
 min={0}
 max={11}
 step={1}
@@ -1000,7 +1024,7 @@ onChange={(new_val_w) => {
                                             <hr></hr>
                                         </div>,
                     <RangeControl
-                    label={__('Offset left', 'zenbsblocks')}
+                    label={__('Offset left', 'zenbsgridblocks')}
                     min={0}
                     max={11}
                     step={1}
@@ -1025,7 +1049,7 @@ onChange={(new_val_w) => {
                                             <hr></hr>
                                         </div>,
                     <RangeControl
-                    label={__('Offset left', 'zenbsblocks')}
+                    label={__('Offset left', 'zenbsgridblocks')}
                     min={0}
                     max={11}
                     step={1}
@@ -1051,7 +1075,7 @@ onChange={(new_val_w) => {
                                             <hr></hr>
                                         </div>,
                     <RangeControl
-                    label={__('Offset left', 'zenbsblocks')}
+                    label={__('Offset left', 'zenbsgridblocks')}
 
                     min={0}
                     max={11}
@@ -1078,7 +1102,7 @@ onChange={(new_val_w) => {
                                         </div>,
 
 <RangeControl
-label={__('Offset left', 'zenbsblocks')}
+label={__('Offset left', 'zenbsgridblocks')}
 min={0}
 max={11}
 step={1}
@@ -1103,7 +1127,7 @@ onChange={(new_val_w) => {
                                             <hr></hr>
                                         </div>,
                     <RangeControl
-                    label={__('Offset left Xxl (>1400px, larger desktops)', 'zenbsblocks')}
+                    label={__('Offset left Xxl (>1400px, larger desktops)', 'zenbsgridblocks')}
                     min={0}
                     max={11}
                     step={1}
@@ -1137,6 +1161,7 @@ onChange={(new_val_w) => {
                     sharedColWidthClassnames(props),
                     sharedColOffsetsClassnames(props),
                     [`${props.attributes.textAlign !== undefined ? `${props.attributes.textAlign}` : ''}`],
+                    [`${props.attributes.display !== undefined ? `${props.attributes.display}` : ''}`],
                     sharedMarginClassnames(props),
                     sharedPaddingClassnames(props),
                     [`${props.attributes.textColorTheme !== undefined ? `${props.attributes.textColorTheme}` : ''}`],
@@ -1195,6 +1220,7 @@ onChange={(new_val_w) => {
                     sharedColWidthClassnames(props),
                     sharedColOffsetsClassnames(props),
                     [`${props.attributes.textAlign !== undefined ? `${props.attributes.textAlign}` : ''}`],
+                    [`${props.attributes.display !== undefined ? `${props.attributes.display}` : ''}`],
                     sharedMarginClassnames(props),
                     sharedPaddingClassnames(props),
                     [`${props.attributes.textColorTheme !== undefined ? `${props.attributes.textColorTheme}` : ''}`],
