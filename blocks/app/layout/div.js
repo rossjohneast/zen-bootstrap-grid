@@ -451,7 +451,7 @@ registerBlockType('zenbsgridblocks/div', {
                 <PanelBody title={__('Div quick settings', 'zenbsgridblocks')}>
 
                 <RangeControl
-                        label={ __( 'Min height', 'zenbsgridblocks' ) }
+                        label={ __( 'Minimum height', 'zenbsgridblocks' ) }
                         min={ 0 }
                         max={ 2000 }
                         step={ 5 }
@@ -463,7 +463,7 @@ registerBlockType('zenbsgridblocks/div', {
                         }} />
 
 <RangeControl
-                        label={__('Margin Bottom LG (Desktop and up)', 'zenbsgridblocks')}
+                        label={__('Margin Bottom (LG: Desktop and up)', 'zenbsgridblocks')}
                         min={0}
                         max={5}
                         allowReset={true}

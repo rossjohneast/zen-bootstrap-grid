@@ -1040,46 +1040,46 @@ const {
   RangeControl,
   SelectControl
 } = wp.components;
-registerBlockType('zenbsgridblocks/container', {
-  title: __('Container', 'zenbsgridblocks'),
-  description: __('Containers are used to contain, pad, and (sometimes) center the rows within them. While containers can be nested, most layouts do not require a nested container.', 'zenbsgridblocks'),
-  category: 'zenbsgridblocks',
+registerBlockType("zenbsgridblocks/container", {
+  title: __("Container", "zenbsgridblocks"),
+  description: __("Containers are used to contain, pad, and (sometimes) center the rows within them. While containers can be nested, most layouts do not require a nested container.", "zenbsgridblocks"),
+  category: "zenbsgridblocks",
   icon: _block_icons__WEBPACK_IMPORTED_MODULE_1__["default"].div,
   attributes: {
     id: {
-      type: 'number'
+      type: "number"
     },
     minHeightContainer: {
-      type: 'number'
+      type: "number"
     },
     textColor: {
-      type: 'string'
+      type: "string"
     },
     backgroundColor: {
-      type: 'string'
+      type: "string"
     },
     backgroundImage: {
-      type: 'string',
+      type: "string",
       default: null
     },
     backgroundImageAttachment: {
-      type: 'string'
+      type: "string"
     },
     backgroundImageSize: {
-      type: 'string'
+      type: "string"
     },
     backgroundImagePos: {
-      type: 'string'
+      type: "string"
     },
     backgroundImageRepeat: {
-      type: 'string'
+      type: "string"
     },
     backgroundColorTheme: {
-      type: 'string'
+      type: "string"
     },
     layoutContainerOption: {
-      type: 'string',
-      default: 'container'
+      type: "string",
+      default: "container"
     }
   },
   edit: props => {
@@ -1091,7 +1091,7 @@ registerBlockType('zenbsgridblocks/container', {
     } = props;
 
     //Only use the background inline style if its not null
-    let BackgroundIsActive = '';
+    let BackgroundIsActive = "";
     if (props.attributes.backgroundImage !== null) {
       BackgroundIsActive = {
         backgroundImage: `url( ${props.attributes.backgroundImage} )`
@@ -1118,15 +1118,15 @@ registerBlockType('zenbsgridblocks/container', {
       });
     };
     return [wp.element.createElement(InspectorControls, null, wp.element.createElement(Panel, null, wp.element.createElement(PanelBody, {
-      title: __('Container Settings', 'zenbsgridblocks'),
+      title: __("Container Settings", "zenbsgridblocks"),
       initialOpen: true
     }, wp.element.createElement(RangeControl, {
-      label: __('Minimum height', 'zenbsgridblocks'),
+      label: __("Minimum height", "zenbsgridblocks"),
       min: 0,
       max: 2000,
       step: 5,
       allowReset: true,
-      resetFallbackValue: '0',
+      resetFallbackValue: "0",
       value: props.attributes.minHeightContainer,
       onChange: new_val => {
         props.setAttributes({
@@ -1136,29 +1136,29 @@ registerBlockType('zenbsgridblocks/container', {
     }), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Layout container width', 'zenbsgridblocks'),
+      label: __("Layout container width", "zenbsgridblocks"),
       value: props.attributes.layoutContainerOption,
       options: [{
-        value: 'container',
-        label: 'container'
+        value: "container",
+        label: "container"
       }, {
-        value: 'container-sm',
-        label: 'container-sm'
+        value: "container-sm",
+        label: "container-sm"
       }, {
-        value: 'container-md',
-        label: 'container-md'
+        value: "container-md",
+        label: "container-md"
       }, {
-        value: 'container-lg',
-        label: 'container-lg'
+        value: "container-lg",
+        label: "container-lg"
       }, {
-        value: 'container-xl',
-        label: 'container-xl'
+        value: "container-xl",
+        label: "container-xl"
       }, {
-        value: 'container-xxl',
-        label: 'container-xxl'
+        value: "container-xxl",
+        label: "container-xxl"
       }, {
-        value: 'container-fluid',
-        label: 'container-fluid'
+        value: "container-fluid",
+        label: "container-fluid"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -1166,9 +1166,9 @@ registerBlockType('zenbsgridblocks/container', {
         });
       }
     }))), wp.element.createElement(PanelBody, {
-      title: __('Background image', 'zenbsgridblocks'),
+      title: __("Container Background image", "zenbsgridblocks"),
       initialOpen: false
-    }, !!attributes.backgroundImage == '' && wp.element.createElement(PanelRow, {
+    }, !!attributes.backgroundImage == "" && wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(MediaUploadCheck, null, wp.element.createElement(MediaUpload, {
       onSelect: onImageSelect,
@@ -1187,21 +1187,21 @@ registerBlockType('zenbsgridblocks/container', {
       className: "d-flex flex-wrap"
     }, wp.element.createElement("img", {
       src: attributes.backgroundImage,
-      alt: __('Background image', 'image-selector-example')
+      alt: __("Background image", "image-selector-example")
     }), wp.element.createElement(Button, {
       className: "components-button block-library-cover__reset-button is-secondary is-small",
       onClick: onRemoveImage
-    }, __('Clear Media', 'zenbsgridblocks'))))), wp.element.createElement(PanelRow, {
+    }, __("Clear Media", "zenbsgridblocks"))))), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background fixed', 'zenbsgridblocks'),
+      label: __("Background fixed", "zenbsgridblocks"),
       value: props.attributes.backgroundImageAttachment,
       options: [{
-        value: 'initial',
-        label: 'Initial'
+        value: "initial",
+        label: "Initial"
       }, {
-        value: 'fixed',
-        label: 'Fixed'
+        value: "fixed",
+        label: "Fixed"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -1211,38 +1211,38 @@ registerBlockType('zenbsgridblocks/container', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background Tint', 'zenbsgridblocks'),
+      label: __("Background Tint", "zenbsgridblocks"),
       value: props.attributes.backgroundImageTint,
       options: [{
-        value: '',
-        label: 'Tint None'
+        value: "",
+        label: "Tint None"
       }, {
-        value: 'tint tint-01',
-        label: '10%'
+        value: "tint tint-01",
+        label: "10%"
       }, {
-        value: 'tint tint-02',
-        label: '20%'
+        value: "tint tint-02",
+        label: "20%"
       }, {
-        value: 'tint tint-03',
-        label: '30%'
+        value: "tint tint-03",
+        label: "30%"
       }, {
-        value: 'tint tint-04',
-        label: '40%'
+        value: "tint tint-04",
+        label: "40%"
       }, {
-        value: 'tint tint-05',
-        label: '50%'
+        value: "tint tint-05",
+        label: "50%"
       }, {
-        value: 'tint tint-06',
-        label: '60%'
+        value: "tint tint-06",
+        label: "60%"
       }, {
-        value: 'tint tint-07',
-        label: '70%'
+        value: "tint tint-07",
+        label: "70%"
       }, {
-        value: 'tint tint-08',
-        label: '80%'
+        value: "tint tint-08",
+        label: "80%"
       }, {
-        value: 'tint tint-09',
-        label: '90%'
+        value: "tint tint-09",
+        label: "90%"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -1252,20 +1252,20 @@ registerBlockType('zenbsgridblocks/container', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background Size', 'zenbsgridblocks'),
+      label: __("Background Size", "zenbsgridblocks"),
       value: props.attributes.backgroundImageSize,
       options: [{
-        value: 'cover',
-        label: 'Cover'
+        value: "cover",
+        label: "Cover"
       }, {
-        value: 'contain',
-        label: 'Contain'
+        value: "contain",
+        label: "Contain"
       }, {
-        value: 'auto',
-        label: 'Auto'
+        value: "auto",
+        label: "Auto"
       }, {
-        value: '100%',
-        label: '100%'
+        value: "100%",
+        label: "100%"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -1275,29 +1275,29 @@ registerBlockType('zenbsgridblocks/container', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background Repeat', 'zenbsgridblocks'),
+      label: __("Background Repeat", "zenbsgridblocks"),
       value: props.attributes.backgroundImageRepeat,
       options: [{
-        value: 'repeat',
-        label: 'Repeat'
+        value: "repeat",
+        label: "Repeat"
       }, {
-        value: 'no-repeat',
-        label: 'No-repeat'
+        value: "no-repeat",
+        label: "No-repeat"
       }, {
-        value: 'repeat-x',
-        label: 'Repeat-x'
+        value: "repeat-x",
+        label: "Repeat-x"
       }, {
-        value: 'repeat-y',
-        label: 'Repeat-y'
+        value: "repeat-y",
+        label: "Repeat-y"
       }, {
-        value: 'space',
-        label: 'Space'
+        value: "space",
+        label: "Space"
       }, {
-        value: 'round',
-        label: 'Round'
+        value: "round",
+        label: "Round"
       }, {
-        value: 'initial',
-        label: 'Initial'
+        value: "initial",
+        label: "Initial"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -1307,32 +1307,32 @@ registerBlockType('zenbsgridblocks/container', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background image position', 'zenbsgridblocks'),
+      label: __("Background image position", "zenbsgridblocks"),
       value: props.attributes.backgroundImagePos,
       options: [{
-        value: 'center center',
-        label: 'Center Center'
+        value: "center center",
+        label: "Center Center"
       }, {
-        value: 'center top',
-        label: 'Center Top'
+        value: "center top",
+        label: "Center Top"
       }, {
-        value: 'center bottom',
-        label: 'Center Bottom'
+        value: "center bottom",
+        label: "Center Bottom"
       }, {
-        value: 'left top',
-        label: 'Left Top'
+        value: "left top",
+        label: "Left Top"
       }, {
-        value: 'left center',
-        label: 'Left Center'
+        value: "left center",
+        label: "Left Center"
       }, {
-        value: 'left bottom',
-        label: 'Left Bottom'
+        value: "left bottom",
+        label: "Left Bottom"
       }, {
-        value: 'right center',
-        label: 'Right Center'
+        value: "right center",
+        label: "Right Center"
       }, {
-        value: 'right bottom',
-        label: 'Right Bottom'
+        value: "right bottom",
+        label: "Right Bottom"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -1346,8 +1346,8 @@ registerBlockType('zenbsgridblocks/container', {
         ...BackgroundIsActive
       }
     }, wp.element.createElement(InnerBlocks, {
-      allowedBlocks: ['zenbsgridblocks/row'],
-      template: [['zenbsgridblocks/row']]
+      allowedBlocks: ["zenbsgridblocks/row"],
+      template: [["zenbsgridblocks/row"]]
     }))];
   },
   save: props => {
@@ -1362,7 +1362,7 @@ registerBlockType('zenbsgridblocks/container', {
     };
 
     //Only use the background inline style if its not null
-    let BackgroundIsActive = '';
+    let BackgroundIsActive = "";
     if (props.attributes.backgroundImage !== null) {
       BackgroundIsActive = {
         backgroundImage: `url( ${props.attributes.backgroundImage} )`
@@ -1443,397 +1443,397 @@ const {
 
 const attributes = {
   display: {
-    type: 'string'
+    type: "string"
   },
   minHeightCol: {
-    type: 'number'
+    type: "number"
   },
   backgroundColor: {
-    type: 'string'
+    type: "string"
   },
   backgroundImage: {
-    type: 'string',
+    type: "string",
     default: null
   },
   backgroundImageAttachment: {
-    type: 'string'
+    type: "string"
   },
   backgroundImageSize: {
-    type: 'string'
+    type: "string"
   },
   backgroundImagePos: {
-    type: 'string'
+    type: "string"
   },
   backgroundImageRepeat: {
-    type: 'string'
+    type: "string"
   },
   backgroundImageTint: {
-    type: 'string'
+    type: "string"
   },
   layoutContainerOption: {
-    type: 'string',
-    default: 'container'
+    type: "string",
+    default: "container"
   },
   colWidth: {
-    type: 'number'
+    type: "number"
   },
   colWidthSm: {
-    type: 'number'
+    type: "number"
   },
   colWidthMd: {
-    type: 'number'
+    type: "number"
   },
   colWidthLg: {
-    type: 'number'
+    type: "number"
   },
   colWidthXl: {
-    type: 'number'
+    type: "number"
   },
   colWidthXxl: {
-    type: 'number'
+    type: "number"
   },
   colWidthPH: {
-    type: 'string',
-    default: 'col-'
+    type: "string",
+    default: "col-"
   },
   colOffset: {
-    type: 'number'
+    type: "number"
   },
   colOffsetSm: {
-    type: 'number'
+    type: "number"
   },
   colOffsetMd: {
-    type: 'number'
+    type: "number"
   },
   colOffsetLg: {
-    type: 'number'
+    type: "number"
   },
   colOffsetXl: {
-    type: 'number'
+    type: "number"
   },
   colOffsetXxl: {
-    type: 'number'
+    type: "number"
   },
   colOffsetPH: {
-    type: 'string',
-    default: 'offset-'
+    type: "string",
+    default: "offset-"
   },
   colRangeSteps: {
-    type: 'number',
-    default: '0'
+    type: "number",
+    default: "0"
   },
   textColor: {
-    type: 'string'
+    type: "string"
   },
   alignItems: {
-    type: 'string'
+    type: "string"
   },
   justifyContent: {
-    type: 'string'
+    type: "string"
   },
   textAlign: {
-    type: 'string'
+    type: "string"
   },
   backgroundColorTheme: {
-    type: 'string'
+    type: "string"
   },
   textColorTheme: {
-    type: 'string'
+    type: "string"
   },
   padding: {
-    type: 'number'
+    type: "number"
   },
   paddingT: {
-    type: 'number'
+    type: "number"
   },
   paddingB: {
-    type: 'number'
+    type: "number"
   },
   paddingL: {
-    type: 'number'
+    type: "number"
   },
   paddingR: {
-    type: 'number'
+    type: "number"
   },
   paddingX: {
-    type: 'number'
+    type: "number"
   },
   paddingY: {
-    type: 'number'
+    type: "number"
   },
   paddingSM: {
-    type: 'number'
+    type: "number"
   },
   paddingSMT: {
-    type: 'number'
+    type: "number"
   },
   paddingSMB: {
-    type: 'number'
+    type: "number"
   },
   paddingSML: {
-    type: 'number'
+    type: "number"
   },
   paddingSMR: {
-    type: 'number'
+    type: "number"
   },
   paddingSMX: {
-    type: 'number'
+    type: "number"
   },
   paddingSMY: {
-    type: 'number'
+    type: "number"
   },
   paddingMD: {
-    type: 'number'
+    type: "number"
   },
   paddingMDT: {
-    type: 'number'
+    type: "number"
   },
   paddingMDB: {
-    type: 'number'
+    type: "number"
   },
   paddingMDL: {
-    type: 'number'
+    type: "number"
   },
   paddingMDR: {
-    type: 'number'
+    type: "number"
   },
   paddingMDX: {
-    type: 'number'
+    type: "number"
   },
   paddingMDY: {
-    type: 'number'
+    type: "number"
   },
   paddingLG: {
-    type: 'number'
+    type: "number"
   },
   paddingLGT: {
-    type: 'number'
+    type: "number"
   },
   paddingLGB: {
-    type: 'number'
+    type: "number"
   },
   paddingLGL: {
-    type: 'number'
+    type: "number"
   },
   paddingLGR: {
-    type: 'number'
+    type: "number"
   },
   paddingLGX: {
-    type: 'number'
+    type: "number"
   },
   paddingLGY: {
-    type: 'number'
+    type: "number"
   },
   paddingXL: {
-    type: 'number'
+    type: "number"
   },
   paddingXLT: {
-    type: 'number'
+    type: "number"
   },
   paddingXLB: {
-    type: 'number'
+    type: "number"
   },
   paddingXLL: {
-    type: 'number'
+    type: "number"
   },
   paddingXLR: {
-    type: 'number'
+    type: "number"
   },
   paddingXLX: {
-    type: 'number'
+    type: "number"
   },
   paddingXLY: {
-    type: 'number'
+    type: "number"
   },
   paddingXXL: {
-    type: 'number'
+    type: "number"
   },
   paddingXXLT: {
-    type: 'number'
+    type: "number"
   },
   paddingXXLB: {
-    type: 'number'
+    type: "number"
   },
   paddingXXLL: {
-    type: 'number'
+    type: "number"
   },
   paddingXXLR: {
-    type: 'number'
+    type: "number"
   },
   paddingXXLX: {
-    type: 'number'
+    type: "number"
   },
   paddingXXLY: {
-    type: 'number'
+    type: "number"
   },
   margin: {
-    type: 'number'
+    type: "number"
   },
   marginT: {
-    type: 'number'
+    type: "number"
   },
   marginB: {
-    type: 'number'
+    type: "number"
   },
   marginL: {
-    type: 'number'
+    type: "number"
   },
   marginR: {
-    type: 'number'
+    type: "number"
   },
   marginX: {
-    type: 'number'
+    type: "number"
   },
   marginY: {
-    type: 'number'
+    type: "number"
   },
   marginSM: {
-    type: 'number'
+    type: "number"
   },
   marginSMT: {
-    type: 'number'
+    type: "number"
   },
   marginSMB: {
-    type: 'number'
+    type: "number"
   },
   marginSML: {
-    type: 'number'
+    type: "number"
   },
   marginSMR: {
-    type: 'number'
+    type: "number"
   },
   marginSMX: {
-    type: 'number'
+    type: "number"
   },
   marginSMY: {
-    type: 'number'
+    type: "number"
   },
   marginMD: {
-    type: 'number'
+    type: "number"
   },
   marginMDT: {
-    type: 'number'
+    type: "number"
   },
   marginMDB: {
-    type: 'number'
+    type: "number"
   },
   marginMDL: {
-    type: 'number'
+    type: "number"
   },
   marginMDR: {
-    type: 'number'
+    type: "number"
   },
   marginMDX: {
-    type: 'number'
+    type: "number"
   },
   marginMDY: {
-    type: 'number'
+    type: "number"
   },
   marginLG: {
-    type: 'number'
+    type: "number"
   },
   marginLGT: {
-    type: 'number'
+    type: "number"
   },
   marginLGB: {
-    type: 'number'
+    type: "number"
   },
   marginLGL: {
-    type: 'number'
+    type: "number"
   },
   marginLGR: {
-    type: 'number'
+    type: "number"
   },
   marginLGX: {
-    type: 'number'
+    type: "number"
   },
   marginLGY: {
-    type: 'number'
+    type: "number"
   },
   marginXL: {
-    type: 'number'
+    type: "number"
   },
   marginXLT: {
-    type: 'number'
+    type: "number"
   },
   marginXLB: {
-    type: 'number'
+    type: "number"
   },
   marginXLL: {
-    type: 'number'
+    type: "number"
   },
   marginXLR: {
-    type: 'number'
+    type: "number"
   },
   marginXLX: {
-    type: 'number'
+    type: "number"
   },
   marginXLY: {
-    type: 'number'
+    type: "number"
   },
   marginXXL: {
-    type: 'number'
+    type: "number"
   },
   marginXXLT: {
-    type: 'number'
+    type: "number"
   },
   marginXXLB: {
-    type: 'number'
+    type: "number"
   },
   marginXXLL: {
-    type: 'number'
+    type: "number"
   },
   marginXXLR: {
-    type: 'number'
+    type: "number"
   },
   marginXXLX: {
-    type: 'number'
+    type: "number"
   },
   marginXXLY: {
-    type: 'number'
+    type: "number"
   },
   animation: {
-    type: 'string'
+    type: "string"
   },
   animationOffset: {
-    type: 'number',
+    type: "number",
     default: 120
   },
   animationDuration: {
-    type: 'number',
+    type: "number",
     default: 400
   },
   animationDelay: {
-    type: 'number'
+    type: "number"
   },
   animationEasing: {
-    type: 'string'
+    type: "string"
   },
   animationOnce: {
-    type: 'boolean'
+    type: "boolean"
   },
   animationMirror: {
-    type: 'boolean'
+    type: "boolean"
   },
   animationPlacement: {
-    type: 'string'
+    type: "string"
   }
 };
 
 //HOC ELEMENT
-//Add child column width classes to HOC parent wp-block, for editor only. 
+//Add child column width classes to HOC parent wp-block, for editor only.
 const withClientIdClassNameBlockSec = createHigherOrderComponent(BlockListBlock => {
   return props => {
     return wp.element.createElement(BlockListBlock, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
-      className: classnames__WEBPACK_IMPORTED_MODULE_5___default()('col', (0,_shared_col_colwidth_classnames_js__WEBPACK_IMPORTED_MODULE_10__["default"])(props), (0,_shared_col_coloffsets_classnames_js__WEBPACK_IMPORTED_MODULE_11__["default"])(props))
+      className: classnames__WEBPACK_IMPORTED_MODULE_5___default()("col", (0,_shared_col_colwidth_classnames_js__WEBPACK_IMPORTED_MODULE_10__["default"])(props), (0,_shared_col_coloffsets_classnames_js__WEBPACK_IMPORTED_MODULE_11__["default"])(props))
     }));
   };
-}, 'withClientIdClassNameBlockSec');
-wp.hooks.addFilter('editor.BlockListBlock', 'zenbsgridblocks/section', withClientIdClassNameBlockSec);
-registerBlockType('zenbsgridblocks/col', {
-  title: __('Column', 'zenbsgridblocks'),
-  description: __('Use to layout content inside rows. Columns auto size to fill space.', 'zenbsgridblocks'),
-  category: 'zenbsgridblocks',
+}, "withClientIdClassNameBlockSec");
+wp.hooks.addFilter("editor.BlockListBlock", "zenbsgridblocks/section", withClientIdClassNameBlockSec);
+registerBlockType("zenbsgridblocks/col", {
+  title: __("Column", "zenbsgridblocks"),
+  description: __("Use to layout content inside rows. Columns auto size to fill space.", "zenbsgridblocks"),
+  category: "zenbsgridblocks",
   icon: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].column,
   attributes,
   edit: props => {
@@ -1849,7 +1849,7 @@ registerBlockType('zenbsgridblocks/col', {
     };
 
     //Only use the background inline style if its not null
-    let BackgroundIsActive = '';
+    let BackgroundIsActive = "";
     if (props.attributes.backgroundImage !== null) {
       BackgroundIsActive = {
         backgroundImage: `url( ${props.attributes.backgroundImage} )`
@@ -1857,7 +1857,7 @@ registerBlockType('zenbsgridblocks/col', {
     }
 
     //Only use the inner background inline style if its not null
-    let colInnerBackgroundIsActive = '';
+    let colInnerBackgroundIsActive = "";
     if (props.attributes.innerColBackgroundImage !== null) {
       colInnerBackgroundIsActive = {
         backgroundImage: `url( ${props.attributes.innerColBackgroundImage} )`
@@ -1894,9 +1894,9 @@ registerBlockType('zenbsgridblocks/col', {
       });
     };
     return [wp.element.createElement(InspectorControls, null, wp.element.createElement(PanelBody, {
-      title: __('Column quick settings', 'zenbsgridblocks')
+      title: __("Column quick settings", "zenbsgridblocks")
     }, wp.element.createElement(RangeControl, {
-      label: __('Column Width LG (Desktop and up)', 'zenbsgridblocks'),
+      label: __("Column Width (LG: Desktop and up)", "zenbsgridblocks"),
       min: 0,
       max: 12,
       step: 1,
@@ -1910,12 +1910,12 @@ registerBlockType('zenbsgridblocks/col', {
         });
       }
     }), wp.element.createElement(RangeControl, {
-      label: __('Min height', 'zenbsgridblocks'),
+      label: __("Minimum height", "zenbsgridblocks"),
       min: 0,
       max: 2000,
       step: 5,
       allowReset: true,
-      resetFallbackValue: '0',
+      resetFallbackValue: "0",
       value: props.attributes.minHeightCol,
       onChange: new_val => {
         props.setAttributes({
@@ -1923,7 +1923,7 @@ registerBlockType('zenbsgridblocks/col', {
         });
       }
     }), wp.element.createElement(RangeControl, {
-      label: __('Margin Bottom LG (Desktop and up)', 'zenbsgridblocks'),
+      label: __("Margin Bottom (LG: Desktop and up)", "zenbsgridblocks"),
       min: 0,
       max: 5,
       allowReset: true,
@@ -1935,7 +1935,7 @@ registerBlockType('zenbsgridblocks/col', {
         });
       }
     }), wp.element.createElement(RangeControl, {
-      label: __('Padding', 'zenbsgridblocks'),
+      label: __("Padding", "zenbsgridblocks"),
       min: 0,
       max: 5,
       allowReset: true,
@@ -1947,43 +1947,43 @@ registerBlockType('zenbsgridblocks/col', {
         });
       }
     })), wp.element.createElement(PanelBody, {
-      title: __('Content Display Settings', 'zenbsgridblocks'),
+      title: __("Column Content Display Settings", "zenbsgridblocks"),
       initialOpen: false
     }, wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Display', 'zenbsgridblocks'),
+      label: __("Display", "zenbsgridblocks"),
       value: props.attributes.display,
       options: [{
-        value: 'd-block',
-        label: 'Block'
+        value: "d-block",
+        label: "Block"
       }, {
-        value: 'd-none',
-        label: 'None'
+        value: "d-none",
+        label: "None"
       }, {
-        value: 'd-inline',
-        label: 'Inline'
+        value: "d-inline",
+        label: "Inline"
       }, {
-        value: 'd-inline-block',
-        label: 'Inline-block'
+        value: "d-inline-block",
+        label: "Inline-block"
       }, {
-        value: 'd-grid',
-        label: 'Grid'
+        value: "d-grid",
+        label: "Grid"
       }, {
-        value: 'd-table',
-        label: 'Table'
+        value: "d-table",
+        label: "Table"
       }, {
-        value: 'd-table-cell',
-        label: 'Table-cell'
+        value: "d-table-cell",
+        label: "Table-cell"
       }, {
-        value: 'd-table-row',
-        label: 'Table-row'
+        value: "d-table-row",
+        label: "Table-row"
       }, {
-        value: 'd-flex',
-        label: 'Flex'
+        value: "d-flex",
+        label: "Flex"
       }, {
-        value: 'd-inline-flex',
-        label: 'Inline-flex'
+        value: "d-inline-flex",
+        label: "Inline-flex"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -1993,17 +1993,17 @@ registerBlockType('zenbsgridblocks/col', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Align Column Text', 'zenbsgridblocks'),
+      label: __("Align Column Text", "zenbsgridblocks"),
       value: props.attributes.textAlign,
       options: [{
-        value: 'text-left',
-        label: 'Left'
+        value: "text-left",
+        label: "Left"
       }, {
-        value: 'text-center',
-        label: 'Center'
+        value: "text-center",
+        label: "Center"
       }, {
-        value: 'text-right',
-        label: 'Right'
+        value: "text-right",
+        label: "Right"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -2013,23 +2013,23 @@ registerBlockType('zenbsgridblocks/col', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Align Column Content', 'zenbsgridblocks'),
+      label: __("Align Column Content", "zenbsgridblocks"),
       value: props.attributes.alignItems,
       options: [{
-        value: 'align-items-start',
-        label: 'Start'
+        value: "align-items-start",
+        label: "Start"
       }, {
-        value: 'align-items-end',
-        label: 'End'
+        value: "align-items-end",
+        label: "End"
       }, {
-        value: 'align-items-center',
-        label: 'Center'
+        value: "align-items-center",
+        label: "Center"
       }, {
-        value: 'align-items-baseline',
-        label: 'Baseline'
+        value: "align-items-baseline",
+        label: "Baseline"
       }, {
-        value: 'align-items-stretch',
-        label: 'Stretch'
+        value: "align-items-stretch",
+        label: "Stretch"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -2039,26 +2039,26 @@ registerBlockType('zenbsgridblocks/col', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Justify Column Content', 'zenbsgridblocks'),
+      label: __("Justify Column Content", "zenbsgridblocks"),
       value: props.attributes.justifyContent,
       options: [{
-        value: 'justify-content-start',
-        label: 'Start'
+        value: "justify-content-start",
+        label: "Start"
       }, {
-        value: 'justify-content-end',
-        label: 'End'
+        value: "justify-content-end",
+        label: "End"
       }, {
-        value: 'justify-content-center',
-        label: 'Center'
+        value: "justify-content-center",
+        label: "Center"
       }, {
-        value: 'justify-content-between',
-        label: 'Space-between'
+        value: "justify-content-between",
+        label: "Space-between"
       }, {
-        value: 'justify-content-around',
-        label: 'Space-around'
+        value: "justify-content-around",
+        label: "Space-around"
       }, {
-        value: 'justify-content-evenly',
-        label: 'Space-evenly'
+        value: "justify-content-evenly",
+        label: "Space-evenly"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -2066,43 +2066,43 @@ registerBlockType('zenbsgridblocks/col', {
         });
       }
     }))), wp.element.createElement(PanelBody, {
-      title: __('Bootstrap Colors', 'zenbsgridblocks'),
+      title: __("Column Bootstrap Colors", "zenbsgridblocks"),
       initialOpen: false
     }, wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background Color', 'zenbsgridblocks'),
+      label: __("Background Color", "zenbsgridblocks"),
       value: props.attributes.backgroundColorTheme,
       options: [{
-        value: '',
-        label: 'Default (None)'
+        value: "",
+        label: "Default (None)"
       }, {
-        value: 'bg-primary',
-        label: 'Primary'
+        value: "bg-primary",
+        label: "Primary"
       }, {
-        value: 'bg-secondary',
-        label: 'Secondary'
+        value: "bg-secondary",
+        label: "Secondary"
       }, {
-        value: 'bg-success',
-        label: 'Success'
+        value: "bg-success",
+        label: "Success"
       }, {
-        value: 'bg-danger',
-        label: 'Danger'
+        value: "bg-danger",
+        label: "Danger"
       }, {
-        value: 'bg-warning',
-        label: 'Warning'
+        value: "bg-warning",
+        label: "Warning"
       }, {
-        value: 'bg-info',
-        label: 'Info'
+        value: "bg-info",
+        label: "Info"
       }, {
-        value: 'bg-light',
-        label: 'Light'
+        value: "bg-light",
+        label: "Light"
       }, {
-        value: 'bg-dark',
-        label: 'Dark'
+        value: "bg-dark",
+        label: "Dark"
       }, {
-        value: 'bg-white',
-        label: 'White'
+        value: "bg-white",
+        label: "White"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -2113,37 +2113,37 @@ registerBlockType('zenbsgridblocks/col', {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
       value: props.attributes.textColorTheme,
-      label: __('Text Color', 'zenbsgridblocks'),
+      label: __("Text Color", "zenbsgridblocks"),
       options: [{
-        value: '',
-        label: 'Default'
+        value: "",
+        label: "Default"
       }, {
-        value: 'text-primary',
-        label: 'Primary'
+        value: "text-primary",
+        label: "Primary"
       }, {
-        value: 'text-secondary',
-        label: 'Secondary'
+        value: "text-secondary",
+        label: "Secondary"
       }, {
-        value: 'text-success',
-        label: 'Success'
+        value: "text-success",
+        label: "Success"
       }, {
-        value: 'text-danger',
-        label: 'Danger'
+        value: "text-danger",
+        label: "Danger"
       }, {
-        value: 'text-warning',
-        label: 'Warning'
+        value: "text-warning",
+        label: "Warning"
       }, {
-        value: 'text-info',
-        label: 'Info'
+        value: "text-info",
+        label: "Info"
       }, {
-        value: 'text-light',
-        label: 'Light'
+        value: "text-light",
+        label: "Light"
       }, {
-        value: 'text-dark',
-        label: 'Dark'
+        value: "text-dark",
+        label: "Dark"
       }, {
-        value: 'text-white',
-        label: 'White'
+        value: "text-white",
+        label: "White"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -2151,25 +2151,25 @@ registerBlockType('zenbsgridblocks/col', {
         });
       }
     }))), wp.element.createElement(PanelColorSettings, {
-      title: __('Custom colors', 'zenbsgridblocks'),
+      title: __("Column Custom colors", "zenbsgridblocks"),
       initialOpen: false,
       colorSettings: [{
         value: backgroundColor,
         onChange: colorValue => setAttributes({
           backgroundColor: colorValue
         }),
-        label: __('Background Color')
+        label: __("Background Color")
       }, {
         value: textColor,
         onChange: colorValue => setAttributes({
           textColor: colorValue
         }),
-        label: __('Text Color')
+        label: __("Text Color")
       }]
     }), wp.element.createElement(PanelBody, {
-      title: __('Background image', 'zenbsgridblocks'),
+      title: __("Column Background image", "zenbsgridblocks"),
       initialOpen: false
-    }, !!attributes.backgroundImage == '' && wp.element.createElement(PanelRow, null, wp.element.createElement(MediaUploadCheck, null, wp.element.createElement(MediaUpload, {
+    }, !!attributes.backgroundImage == "" && wp.element.createElement(PanelRow, null, wp.element.createElement(MediaUploadCheck, null, wp.element.createElement(MediaUpload, {
       onSelect: onImageSelect,
       type: "image",
       value: attributes.backgroundImage,
@@ -2186,21 +2186,21 @@ registerBlockType('zenbsgridblocks/col', {
       className: "d-flex flex-wrap"
     }, wp.element.createElement("img", {
       src: attributes.backgroundImage,
-      alt: __('Background image', 'image-selector-example')
+      alt: __("Background image", "image-selector-example")
     }), wp.element.createElement(Button, {
       className: "components-button block-library-cover__reset-button is-secondary is-small",
       onClick: onRemoveImage
-    }, __('Clear Media', 'zenbsgridblocks'))))), wp.element.createElement(PanelRow, {
+    }, __("Clear Media", "zenbsgridblocks"))))), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background Fixed', 'zenbsgridblocks'),
+      label: __("Background Fixed", "zenbsgridblocks"),
       value: props.attributes.backgroundImageAttachment,
       options: [{
-        value: 'initial',
-        label: 'Initial'
+        value: "initial",
+        label: "Initial"
       }, {
-        value: 'fixed',
-        label: 'Fixed'
+        value: "fixed",
+        label: "Fixed"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -2210,38 +2210,38 @@ registerBlockType('zenbsgridblocks/col', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background Tint', 'zenbsgridblocks'),
+      label: __("Background Tint", "zenbsgridblocks"),
       value: props.attributes.backgroundImageTint,
       options: [{
-        value: '',
-        label: 'Tint None'
+        value: "",
+        label: "Tint None"
       }, {
-        value: 'tint tint-01',
-        label: '10%'
+        value: "tint tint-01",
+        label: "10%"
       }, {
-        value: 'tint tint-02',
-        label: '20%'
+        value: "tint tint-02",
+        label: "20%"
       }, {
-        value: 'tint tint-03',
-        label: '30%'
+        value: "tint tint-03",
+        label: "30%"
       }, {
-        value: 'tint tint-04',
-        label: '40%'
+        value: "tint tint-04",
+        label: "40%"
       }, {
-        value: 'tint tint-05',
-        label: '50%'
+        value: "tint tint-05",
+        label: "50%"
       }, {
-        value: 'tint tint-06',
-        label: '60%'
+        value: "tint tint-06",
+        label: "60%"
       }, {
-        value: 'tint tint-07',
-        label: '70%'
+        value: "tint tint-07",
+        label: "70%"
       }, {
-        value: 'tint tint-08',
-        label: '80%'
+        value: "tint tint-08",
+        label: "80%"
       }, {
-        value: 'tint tint-09',
-        label: '90%'
+        value: "tint tint-09",
+        label: "90%"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -2251,20 +2251,20 @@ registerBlockType('zenbsgridblocks/col', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background Size', 'zenbsgridblocks'),
+      label: __("Background Size", "zenbsgridblocks"),
       value: props.attributes.backgroundImageSize,
       options: [{
-        value: 'cover',
-        label: 'Cover'
+        value: "cover",
+        label: "Cover"
       }, {
-        value: 'contain',
-        label: 'Contain'
+        value: "contain",
+        label: "Contain"
       }, {
-        value: 'auto',
-        label: 'Auto'
+        value: "auto",
+        label: "Auto"
       }, {
-        value: '100%',
-        label: '100%'
+        value: "100%",
+        label: "100%"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -2274,29 +2274,29 @@ registerBlockType('zenbsgridblocks/col', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background Repeat', 'zenbsgridblocks'),
+      label: __("Background Repeat", "zenbsgridblocks"),
       value: props.attributes.backgroundImageRepeat,
       options: [{
-        value: 'repeat',
-        label: 'Repeat'
+        value: "repeat",
+        label: "Repeat"
       }, {
-        value: 'no-repeat',
-        label: 'No-repeat'
+        value: "no-repeat",
+        label: "No-repeat"
       }, {
-        value: 'repeat-x',
-        label: 'Repeat-x'
+        value: "repeat-x",
+        label: "Repeat-x"
       }, {
-        value: 'repeat-y',
-        label: 'Repeat-y'
+        value: "repeat-y",
+        label: "Repeat-y"
       }, {
-        value: 'space',
-        label: 'Space'
+        value: "space",
+        label: "Space"
       }, {
-        value: 'round',
-        label: 'Round'
+        value: "round",
+        label: "Round"
       }, {
-        value: 'initial',
-        label: 'Initial'
+        value: "initial",
+        label: "Initial"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -2306,32 +2306,32 @@ registerBlockType('zenbsgridblocks/col', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background Image Position', 'zenbsgridblocks'),
+      label: __("Background Image Position", "zenbsgridblocks"),
       value: props.attributes.backgroundImagePos,
       options: [{
-        value: 'center center',
-        label: 'Center Center'
+        value: "center center",
+        label: "Center Center"
       }, {
-        value: 'center top',
-        label: 'Center Top'
+        value: "center top",
+        label: "Center Top"
       }, {
-        value: 'center bottom',
-        label: 'Center Bottom'
+        value: "center bottom",
+        label: "Center Bottom"
       }, {
-        value: 'left top',
-        label: 'Left Top'
+        value: "left top",
+        label: "Left Top"
       }, {
-        value: 'left center',
-        label: 'Left Center'
+        value: "left center",
+        label: "Left Center"
       }, {
-        value: 'left bottom',
-        label: 'Left Bottom'
+        value: "left bottom",
+        label: "Left Bottom"
       }, {
-        value: 'right center',
-        label: 'Right Center'
+        value: "right center",
+        label: "Right Center"
       }, {
-        value: 'right bottom',
-        label: 'Right Bottom'
+        value: "right bottom",
+        label: "Right Bottom"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -2339,7 +2339,7 @@ registerBlockType('zenbsgridblocks/col', {
         });
       }
     }))), wp.element.createElement(PanelBody, {
-      title: __('Width', 'zenbsgridblocks'),
+      title: __("Column Width", "zenbsgridblocks"),
       initialOpen: false
     }, wp.element.createElement("div", {
       className: "zen-gut-panel-help"
@@ -2347,9 +2347,9 @@ registerBlockType('zenbsgridblocks/col', {
       className: "zen-gut-tab-panel",
       activeClass: "zen-gut-tab-panel-tab-active-tab",
       tabs: [{
-        name: 'tab0',
+        name: "tab0",
         title: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].bpmobile,
-        className: 'zen-gut-tab-panel-tab',
+        className: "zen-gut-tab-panel-tab",
         content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Mobile portrait")), wp.element.createElement("div", null, "Smallest device width and greater"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
           min: 0,
           max: 12,
@@ -2365,9 +2365,9 @@ registerBlockType('zenbsgridblocks/col', {
           }
         })]
       }, {
-        name: 'tab1',
+        name: "tab1",
         title: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].bpmobileland,
-        className: 'zen-gut-tab-panel-tab',
+        className: "zen-gut-tab-panel-tab",
         content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Mobile landscape")), wp.element.createElement("div", null, "Width equal or greater than 576px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
           min: 0,
           max: 12,
@@ -2383,9 +2383,9 @@ registerBlockType('zenbsgridblocks/col', {
           }
         })]
       }, {
-        name: 'tab2',
+        name: "tab2",
         title: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].bptablet,
-        className: 'zen-gut-tab-panel-tab',
+        className: "zen-gut-tab-panel-tab",
         content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Tablet portrait")), wp.element.createElement("div", null, "Width equal or greater than 768px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
           min: 0,
           max: 12,
@@ -2401,9 +2401,9 @@ registerBlockType('zenbsgridblocks/col', {
           }
         })]
       }, {
-        name: 'tab3',
+        name: "tab3",
         title: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].bplaptop,
-        className: 'zen-gut-tab-panel-tab',
+        className: "zen-gut-tab-panel-tab",
         content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Desktops")), wp.element.createElement("div", null, "Width equal or greater than 992px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
           min: 0,
           max: 12,
@@ -2419,9 +2419,9 @@ registerBlockType('zenbsgridblocks/col', {
           }
         })]
       }, {
-        name: 'tab4',
+        name: "tab4",
         title: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].bpdesktop,
-        className: 'zen-gut-tab-panel-tab',
+        className: "zen-gut-tab-panel-tab",
         content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Large desktop")), wp.element.createElement("div", null, "Width equal or greater than 1200px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
           min: 0,
           max: 12,
@@ -2437,9 +2437,9 @@ registerBlockType('zenbsgridblocks/col', {
           }
         })]
       }, {
-        name: 'tab5',
+        name: "tab5",
         title: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].bpdesktopxxl,
-        className: 'zen-gut-tab-panel-tab',
+        className: "zen-gut-tab-panel-tab",
         content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Larger desktop")), wp.element.createElement("div", null, "Width equal or greater than 1400px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
           min: 0,
           max: 12,
@@ -2456,7 +2456,7 @@ registerBlockType('zenbsgridblocks/col', {
         })]
       }]
     }, tab => wp.element.createElement("p", null, tab.content))), wp.element.createElement(PanelBody, {
-      title: __('Offset', 'zenbsgridblocks'),
+      title: __("Column Offset", "zenbsgridblocks"),
       initialOpen: false
     }, wp.element.createElement("div", {
       className: "zen-gut-panel-help"
@@ -2464,11 +2464,11 @@ registerBlockType('zenbsgridblocks/col', {
       className: "zen-gut-tab-panel",
       activeClass: "zen-gut-tab-panel-tab-active-tab",
       tabs: [{
-        name: 'tab0',
+        name: "tab0",
         title: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].bpmobile,
-        className: 'zen-gut-tab-panel-tab',
+        className: "zen-gut-tab-panel-tab",
         content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Mobile portrait")), wp.element.createElement("div", null, "Smallest device width and greater"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
-          label: __('Offset left', 'zenbsgridblocks'),
+          label: __("Offset left", "zenbsgridblocks"),
           min: 0,
           max: 11,
           step: 1,
@@ -2483,11 +2483,11 @@ registerBlockType('zenbsgridblocks/col', {
           }
         })]
       }, {
-        name: 'tab1',
+        name: "tab1",
         title: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].bpmobileland,
-        className: 'zen-gut-tab-panel-tab',
+        className: "zen-gut-tab-panel-tab",
         content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Mobile landscape")), wp.element.createElement("div", null, "Width equal or greater than 576px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
-          label: __('Offset left', 'zenbsgridblocks'),
+          label: __("Offset left", "zenbsgridblocks"),
           min: 0,
           max: 11,
           step: 1,
@@ -2502,11 +2502,11 @@ registerBlockType('zenbsgridblocks/col', {
           }
         })]
       }, {
-        name: 'tab2',
+        name: "tab2",
         title: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].bptablet,
-        className: 'zen-gut-tab-panel-tab',
+        className: "zen-gut-tab-panel-tab",
         content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Tablet portrait")), wp.element.createElement("div", null, "Width equal or greater than 768px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
-          label: __('Offset left', 'zenbsgridblocks'),
+          label: __("Offset left", "zenbsgridblocks"),
           min: 0,
           max: 11,
           step: 1,
@@ -2521,11 +2521,11 @@ registerBlockType('zenbsgridblocks/col', {
           }
         })]
       }, {
-        name: 'tab3',
+        name: "tab3",
         title: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].bplaptop,
-        className: 'zen-gut-tab-panel-tab',
+        className: "zen-gut-tab-panel-tab",
         content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Desktops")), wp.element.createElement("div", null, "Width equal or greater than 992px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
-          label: __('Offset left', 'zenbsgridblocks'),
+          label: __("Offset left", "zenbsgridblocks"),
           min: 0,
           max: 11,
           step: 1,
@@ -2540,11 +2540,11 @@ registerBlockType('zenbsgridblocks/col', {
           }
         })]
       }, {
-        name: 'tab4',
+        name: "tab4",
         title: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].bpdesktop,
-        className: 'zen-gut-tab-panel-tab',
+        className: "zen-gut-tab-panel-tab",
         content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Large desktop")), wp.element.createElement("div", null, "Width equal or greater than 1200px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
-          label: __('Offset left', 'zenbsgridblocks'),
+          label: __("Offset left", "zenbsgridblocks"),
           min: 0,
           max: 11,
           step: 1,
@@ -2559,11 +2559,11 @@ registerBlockType('zenbsgridblocks/col', {
           }
         })]
       }, {
-        name: 'tab5',
+        name: "tab5",
         title: _block_icons__WEBPACK_IMPORTED_MODULE_2__["default"].bpdesktopxxl,
-        className: 'zen-gut-tab-panel-tab',
+        className: "zen-gut-tab-panel-tab",
         content: [wp.element.createElement("div", null, wp.element.createElement("div", null, wp.element.createElement("strong", null, "Larger desktop")), wp.element.createElement("div", null, "Width equal or greater than 1400px"), wp.element.createElement("hr", null)), wp.element.createElement(RangeControl, {
-          label: __('Offset left Xxl (>1400px, larger desktops)', 'zenbsgridblocks'),
+          label: __("Offset left Xxl (>1400px, larger desktops)", "zenbsgridblocks"),
           min: 0,
           max: 11,
           step: 1,
@@ -2579,7 +2579,7 @@ registerBlockType('zenbsgridblocks/col', {
         })]
       }]
     }, tab => wp.element.createElement("p", null, tab.content))), (0,_shared_padding_padding_insp_cnt_js__WEBPACK_IMPORTED_MODULE_6__["default"])(props), (0,_shared_margin_margin_insp_cnt_js__WEBPACK_IMPORTED_MODULE_8__["default"])(props)), wp.element.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_5___default()('col', (0,_shared_col_colwidth_classnames_js__WEBPACK_IMPORTED_MODULE_10__["default"])(props), (0,_shared_col_coloffsets_classnames_js__WEBPACK_IMPORTED_MODULE_11__["default"])(props), [`${props.attributes.textAlign !== undefined ? `${props.attributes.textAlign}` : ''}`], [`${props.attributes.display !== undefined ? `${props.attributes.display}` : ''}`], (0,_shared_margin_margin_classnames_js__WEBPACK_IMPORTED_MODULE_9__["default"])(props), (0,_shared_padding_padding_classnames_js__WEBPACK_IMPORTED_MODULE_7__["default"])(props), [`${props.attributes.textColorTheme !== undefined ? `${props.attributes.textColorTheme}` : ''}`], [`${props.attributes.backgroundColorTheme !== undefined ? `${props.attributes.backgroundColorTheme}` : ''}`], [`${props.attributes.backgroundImageTint !== undefined ? `${props.attributes.backgroundImageTint}` : ''}`], [`${props.attributes.justifyContent !== undefined ? `${props.attributes.justifyContent}` : ''}`], [`${props.attributes.alignItems !== undefined ? `${props.attributes.alignItems}` : ''}`]),
+      className: classnames__WEBPACK_IMPORTED_MODULE_5___default()("col", (0,_shared_col_colwidth_classnames_js__WEBPACK_IMPORTED_MODULE_10__["default"])(props), (0,_shared_col_coloffsets_classnames_js__WEBPACK_IMPORTED_MODULE_11__["default"])(props), [`${props.attributes.textAlign !== undefined ? `${props.attributes.textAlign}` : ""}`], [`${props.attributes.display !== undefined ? `${props.attributes.display}` : ""}`], (0,_shared_margin_margin_classnames_js__WEBPACK_IMPORTED_MODULE_9__["default"])(props), (0,_shared_padding_padding_classnames_js__WEBPACK_IMPORTED_MODULE_7__["default"])(props), [`${props.attributes.textColorTheme !== undefined ? `${props.attributes.textColorTheme}` : ""}`], [`${props.attributes.backgroundColorTheme !== undefined ? `${props.attributes.backgroundColorTheme}` : ""}`], [`${props.attributes.backgroundImageTint !== undefined ? `${props.attributes.backgroundImageTint}` : ""}`], [`${props.attributes.justifyContent !== undefined ? `${props.attributes.justifyContent}` : ""}`], [`${props.attributes.alignItems !== undefined ? `${props.attributes.alignItems}` : ""}`]),
       style: (style, {
         ...style,
         ...colStyleOuter,
@@ -2597,7 +2597,7 @@ registerBlockType('zenbsgridblocks/col', {
     };
 
     //Only use the background inline style if its not null
-    let BackgroundIsActive = '';
+    let BackgroundIsActive = "";
     if (props.attributes.backgroundImage !== null) {
       BackgroundIsActive = {
         backgroundImage: `url( ${props.attributes.backgroundImage} )`
@@ -2612,7 +2612,7 @@ registerBlockType('zenbsgridblocks/col', {
       backgroundPosition: props.attributes.backgroundImagePos
     };
     return wp.element.createElement("div", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_5___default()('col', (0,_shared_col_colwidth_classnames_js__WEBPACK_IMPORTED_MODULE_10__["default"])(props), (0,_shared_col_coloffsets_classnames_js__WEBPACK_IMPORTED_MODULE_11__["default"])(props), [`${props.attributes.textAlign !== undefined ? `${props.attributes.textAlign}` : ''}`], [`${props.attributes.display !== undefined ? `${props.attributes.display}` : ''}`], (0,_shared_margin_margin_classnames_js__WEBPACK_IMPORTED_MODULE_9__["default"])(props), (0,_shared_padding_padding_classnames_js__WEBPACK_IMPORTED_MODULE_7__["default"])(props), [`${props.attributes.textColorTheme !== undefined ? `${props.attributes.textColorTheme}` : ''}`], [`${props.attributes.backgroundColorTheme !== undefined ? `${props.attributes.backgroundColorTheme}` : ''}`], [`${props.attributes.backgroundImageTint !== undefined ? `${props.attributes.backgroundImageTint}` : ''}`], [`${props.attributes.justifyContent !== undefined ? `${props.attributes.justifyContent}` : ''}`], [`${props.attributes.alignItems !== undefined ? `${props.attributes.alignItems}` : ''}`]),
+      className: classnames__WEBPACK_IMPORTED_MODULE_5___default()("col", (0,_shared_col_colwidth_classnames_js__WEBPACK_IMPORTED_MODULE_10__["default"])(props), (0,_shared_col_coloffsets_classnames_js__WEBPACK_IMPORTED_MODULE_11__["default"])(props), [`${props.attributes.textAlign !== undefined ? `${props.attributes.textAlign}` : ""}`], [`${props.attributes.display !== undefined ? `${props.attributes.display}` : ""}`], (0,_shared_margin_margin_classnames_js__WEBPACK_IMPORTED_MODULE_9__["default"])(props), (0,_shared_padding_padding_classnames_js__WEBPACK_IMPORTED_MODULE_7__["default"])(props), [`${props.attributes.textColorTheme !== undefined ? `${props.attributes.textColorTheme}` : ""}`], [`${props.attributes.backgroundColorTheme !== undefined ? `${props.attributes.backgroundColorTheme}` : ""}`], [`${props.attributes.backgroundImageTint !== undefined ? `${props.attributes.backgroundImageTint}` : ""}`], [`${props.attributes.justifyContent !== undefined ? `${props.attributes.justifyContent}` : ""}`], [`${props.attributes.alignItems !== undefined ? `${props.attributes.alignItems}` : ""}`]),
       style: (style, {
         ...style,
         ...colStyleOuter,
@@ -3146,7 +3146,7 @@ registerBlockType('zenbsgridblocks/div', {
     return [wp.element.createElement(InspectorControls, null, wp.element.createElement(PanelBody, {
       title: __('Div quick settings', 'zenbsgridblocks')
     }, wp.element.createElement(RangeControl, {
-      label: __('Min height', 'zenbsgridblocks'),
+      label: __('Minimum height', 'zenbsgridblocks'),
       min: 0,
       max: 2000,
       step: 5,
@@ -3159,7 +3159,7 @@ registerBlockType('zenbsgridblocks/div', {
         });
       }
     }), wp.element.createElement(RangeControl, {
-      label: __('Margin Bottom LG (Desktop and up)', 'zenbsgridblocks'),
+      label: __('Margin Bottom (LG: Desktop and up)', 'zenbsgridblocks'),
       min: 0,
       max: 5,
       allowReset: true,
@@ -3660,77 +3660,77 @@ const {
 
 const attributes = {
   backgroundColor: {
-    type: 'string'
+    type: "string"
   },
   backgroundImage: {
-    type: 'string',
+    type: "string",
     default: null
   },
   backgroundImageAttachment: {
-    type: 'string'
+    type: "string"
   },
   backgroundImageSize: {
-    type: 'string'
+    type: "string"
   },
   backgroundImagePos: {
-    type: 'string'
+    type: "string"
   },
   backgroundImageRepeat: {
-    type: 'string'
+    type: "string"
   },
   backgroundImageTint: {
-    type: 'string'
+    type: "string"
   },
   layoutContainerOption: {
-    type: 'string',
-    default: 'container'
+    type: "string",
+    default: "container"
   },
   paddingSection: {
-    type: 'number'
+    type: "number"
   },
   textColor: {
-    type: 'string'
+    type: "string"
   },
   minHeightSection: {
-    type: 'number'
+    type: "number"
   },
   backgroundColorTheme: {
-    type: 'string'
+    type: "string"
   },
   textColorTheme: {
-    type: 'string'
+    type: "string"
   },
   animation: {
-    type: 'string'
+    type: "string"
   },
   animationOffset: {
-    type: 'number',
+    type: "number",
     default: 120
   },
   animationDuration: {
-    type: 'number',
+    type: "number",
     default: 400
   },
   animationDelay: {
-    type: 'number'
+    type: "number"
   },
   animationEasing: {
-    type: 'string'
+    type: "string"
   },
   animationOnce: {
-    type: 'boolean'
+    type: "boolean"
   },
   animationMirror: {
-    type: 'boolean'
+    type: "boolean"
   },
   animationPlacement: {
-    type: 'string'
+    type: "string"
   }
 };
-registerBlockType('zenbsgridblocks/section', {
-  title: __('Section Layout', 'zenbsgridblocks'),
-  description: __('Build layouts of all shapes and sizes thanks to a twelve column system and six default responsive tiers. ', 'zenbsgridblocks'),
-  category: 'zenbsgridblocks',
+registerBlockType("zenbsgridblocks/section", {
+  title: __("Section Layout", "zenbsgridblocks"),
+  description: __("Build layouts of all shapes and sizes thanks to a twelve column system and six default responsive tiers. ", "zenbsgridblocks"),
+  category: "zenbsgridblocks",
   icon: _block_icons__WEBPACK_IMPORTED_MODULE_1__["default"].div,
   attributes,
   edit: props => {
@@ -3761,16 +3761,16 @@ registerBlockType('zenbsgridblocks/section', {
     };
 
     //Only use the background inline style if its not null
-    let BackgroundIsActive = '';
+    let BackgroundIsActive = "";
     if (props.attributes.backgroundImage !== null) {
       BackgroundIsActive = {
         backgroundImage: `url( ${props.attributes.backgroundImage} )`
       };
     }
     return [wp.element.createElement(InspectorControls, null, wp.element.createElement(PanelBody, {
-      title: __('Section options', 'zenbsgridblocks')
+      title: __("Section options", "zenbsgridblocks")
     }, wp.element.createElement(RangeControl, {
-      label: __('Padding Y (top & bottom)', 'zenbsgridblocks'),
+      label: __("Padding Y (top & bottom)", "zenbsgridblocks"),
       min: 0,
       max: 5,
       allowReset: true,
@@ -3782,12 +3782,12 @@ registerBlockType('zenbsgridblocks/section', {
         });
       }
     }), wp.element.createElement(RangeControl, {
-      label: __('Min height', 'zenbsgridblocks'),
+      label: __("Minimum height", "zenbsgridblocks"),
       min: 0,
       max: 2000,
       step: 5,
       allowReset: true,
-      resetFallbackValue: '0',
+      resetFallbackValue: "0",
       value: props.attributes.minHeightSection,
       onChange: new_val => {
         props.setAttributes({
@@ -3795,43 +3795,43 @@ registerBlockType('zenbsgridblocks/section', {
         });
       }
     })), wp.element.createElement(PanelBody, {
-      title: __('Bootstrap colors', 'zenbsgridblocks'),
+      title: __("Section Bootstrap colors", "zenbsgridblocks"),
       initialOpen: false
     }, wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background Color', 'zenbsgridblocks'),
+      label: __("Background Color", "zenbsgridblocks"),
       value: props.attributes.backgroundColorTheme,
       options: [{
-        value: '',
-        label: 'Default (None)'
+        value: "",
+        label: "Default (None)"
       }, {
-        value: 'bg-primary',
-        label: 'Primary'
+        value: "bg-primary",
+        label: "Primary"
       }, {
-        value: 'bg-secondary',
-        label: 'Secondary'
+        value: "bg-secondary",
+        label: "Secondary"
       }, {
-        value: 'bg-success',
-        label: 'Success'
+        value: "bg-success",
+        label: "Success"
       }, {
-        value: 'bg-danger',
-        label: 'Danger'
+        value: "bg-danger",
+        label: "Danger"
       }, {
-        value: 'bg-warning',
-        label: 'Warning'
+        value: "bg-warning",
+        label: "Warning"
       }, {
-        value: 'bg-info',
-        label: 'Info'
+        value: "bg-info",
+        label: "Info"
       }, {
-        value: 'bg-light',
-        label: 'Light'
+        value: "bg-light",
+        label: "Light"
       }, {
-        value: 'bg-dark',
-        label: 'Dark'
+        value: "bg-dark",
+        label: "Dark"
       }, {
-        value: 'bg-white',
-        label: 'White'
+        value: "bg-white",
+        label: "White"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -3841,38 +3841,38 @@ registerBlockType('zenbsgridblocks/section', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Text Color', 'zenbsgridblocks'),
+      label: __("Text Color", "zenbsgridblocks"),
       value: props.attributes.textColorTheme,
       options: [{
-        value: '',
-        label: 'Default'
+        value: "",
+        label: "Default"
       }, {
-        value: 'text-primary',
-        label: 'Primary'
+        value: "text-primary",
+        label: "Primary"
       }, {
-        value: 'text-secondary',
-        label: 'Secondary'
+        value: "text-secondary",
+        label: "Secondary"
       }, {
-        value: 'text-success',
-        label: 'Success'
+        value: "text-success",
+        label: "Success"
       }, {
-        value: 'text-danger',
-        label: 'Danger'
+        value: "text-danger",
+        label: "Danger"
       }, {
-        value: 'text-warning',
-        label: 'Warning'
+        value: "text-warning",
+        label: "Warning"
       }, {
-        value: 'text-info',
-        label: 'Info'
+        value: "text-info",
+        label: "Info"
       }, {
-        value: 'text-light',
-        label: 'Light'
+        value: "text-light",
+        label: "Light"
       }, {
-        value: 'text-dark',
-        label: 'Dark'
+        value: "text-dark",
+        label: "Dark"
       }, {
-        value: 'text-white',
-        label: 'White'
+        value: "text-white",
+        label: "White"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -3880,25 +3880,25 @@ registerBlockType('zenbsgridblocks/section', {
         });
       }
     }))), wp.element.createElement(PanelColorSettings, {
-      title: __('Custom color settings', 'zenbsgridblocks'),
+      title: __("Section Custom color settings", "zenbsgridblocks"),
       initialOpen: false,
       colorSettings: [{
         value: backgroundColor,
         onChange: colorValue => setAttributes({
           backgroundColor: colorValue
         }),
-        label: __('Background Color')
+        label: __("Background Color")
       }, {
         value: textColor,
         onChange: colorValue => setAttributes({
           textColor: colorValue
         }),
-        label: __('Text Color')
+        label: __("Text Color")
       }]
     }), wp.element.createElement(PanelBody, {
-      title: __('Background image', 'zenbsgridblocks'),
+      title: __("Section Background image", "zenbsgridblocks"),
       initialOpen: false
-    }, !!attributes.backgroundImage == '' && wp.element.createElement(PanelRow, null, wp.element.createElement(MediaUploadCheck, null, wp.element.createElement(MediaUpload, {
+    }, !!attributes.backgroundImage == "" && wp.element.createElement(PanelRow, null, wp.element.createElement(MediaUploadCheck, null, wp.element.createElement(MediaUpload, {
       onSelect: onImageSelect,
       type: "image",
       value: attributes.backgroundImage,
@@ -3915,21 +3915,21 @@ registerBlockType('zenbsgridblocks/section', {
       className: "d-flex flex-wrap"
     }, wp.element.createElement("img", {
       src: attributes.backgroundImage,
-      alt: __('Background image', 'image-selector-example')
+      alt: __("Background image", "image-selector-example")
     }), wp.element.createElement(Button, {
       className: "components-button block-library-cover__reset-button is-secondary is-small",
       onClick: onRemoveImage
-    }, __('Clear Media', 'zenbsgridblocks'))))), wp.element.createElement(PanelRow, {
+    }, __("Clear Media", "zenbsgridblocks"))))), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background fixed', 'zenbsgridblocks'),
+      label: __("Background fixed", "zenbsgridblocks"),
       value: props.attributes.backgroundImageAttachment,
       options: [{
-        value: 'initial',
-        label: 'Initial'
+        value: "initial",
+        label: "Initial"
       }, {
-        value: 'fixed',
-        label: 'Fixed'
+        value: "fixed",
+        label: "Fixed"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -3939,38 +3939,38 @@ registerBlockType('zenbsgridblocks/section', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background tint', 'zenbsgridblocks'),
+      label: __("Background tint", "zenbsgridblocks"),
       value: props.attributes.backgroundImageTint,
       options: [{
-        value: '',
-        label: 'Tint None'
+        value: "",
+        label: "Tint None"
       }, {
-        value: 'tint tint-01',
-        label: '10%'
+        value: "tint tint-01",
+        label: "10%"
       }, {
-        value: 'tint tint-02',
-        label: '20%'
+        value: "tint tint-02",
+        label: "20%"
       }, {
-        value: 'tint tint-03',
-        label: '30%'
+        value: "tint tint-03",
+        label: "30%"
       }, {
-        value: 'tint tint-04',
-        label: '40%'
+        value: "tint tint-04",
+        label: "40%"
       }, {
-        value: 'tint tint-05',
-        label: '50%'
+        value: "tint tint-05",
+        label: "50%"
       }, {
-        value: 'tint tint-06',
-        label: '60%'
+        value: "tint tint-06",
+        label: "60%"
       }, {
-        value: 'tint tint-07',
-        label: '70%'
+        value: "tint tint-07",
+        label: "70%"
       }, {
-        value: 'tint tint-08',
-        label: '80%'
+        value: "tint tint-08",
+        label: "80%"
       }, {
-        value: 'tint tint-09',
-        label: '90%'
+        value: "tint tint-09",
+        label: "90%"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -3980,20 +3980,20 @@ registerBlockType('zenbsgridblocks/section', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background size', 'zenbsgridblocks'),
+      label: __("Background size", "zenbsgridblocks"),
       value: props.attributes.backgroundImageSize,
       options: [{
-        value: 'cover',
-        label: 'Cover'
+        value: "cover",
+        label: "Cover"
       }, {
-        value: 'contain',
-        label: 'Contain'
+        value: "contain",
+        label: "Contain"
       }, {
-        value: 'auto',
-        label: 'Auto'
+        value: "auto",
+        label: "Auto"
       }, {
-        value: '100%',
-        label: '100%'
+        value: "100%",
+        label: "100%"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -4003,29 +4003,29 @@ registerBlockType('zenbsgridblocks/section', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background repeat', 'zenbsgridblocks'),
+      label: __("Background repeat", "zenbsgridblocks"),
       value: props.attributes.backgroundImageRepeat,
       options: [{
-        value: 'repeat',
-        label: 'Repeat'
+        value: "repeat",
+        label: "Repeat"
       }, {
-        value: 'no-repeat',
-        label: 'No-repeat'
+        value: "no-repeat",
+        label: "No-repeat"
       }, {
-        value: 'repeat-x',
-        label: 'Repeat-x'
+        value: "repeat-x",
+        label: "Repeat-x"
       }, {
-        value: 'repeat-y',
-        label: 'Repeat-y'
+        value: "repeat-y",
+        label: "Repeat-y"
       }, {
-        value: 'space',
-        label: 'Space'
+        value: "space",
+        label: "Space"
       }, {
-        value: 'round',
-        label: 'Round'
+        value: "round",
+        label: "Round"
       }, {
-        value: 'initial',
-        label: 'Initial'
+        value: "initial",
+        label: "Initial"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -4035,32 +4035,32 @@ registerBlockType('zenbsgridblocks/section', {
     })), wp.element.createElement(PanelRow, {
       className: "w-100"
     }, wp.element.createElement(SelectControl, {
-      label: __('Background image position', 'zenbsgridblocks'),
+      label: __("Background image position", "zenbsgridblocks"),
       value: props.attributes.backgroundImagePos,
       options: [{
-        value: 'center center',
-        label: 'Center Center'
+        value: "center center",
+        label: "Center Center"
       }, {
-        value: 'center top',
-        label: 'Center Top'
+        value: "center top",
+        label: "Center Top"
       }, {
-        value: 'center bottom',
-        label: 'Center Bottom'
+        value: "center bottom",
+        label: "Center Bottom"
       }, {
-        value: 'left top',
-        label: 'Left Top'
+        value: "left top",
+        label: "Left Top"
       }, {
-        value: 'left center',
-        label: 'Left Center'
+        value: "left center",
+        label: "Left Center"
       }, {
-        value: 'left bottom',
-        label: 'Left Bottom'
+        value: "left bottom",
+        label: "Left Bottom"
       }, {
-        value: 'right center',
-        label: 'Right Center'
+        value: "right center",
+        label: "Right Center"
       }, {
-        value: 'right bottom',
-        label: 'Right Bottom'
+        value: "right bottom",
+        label: "Right Bottom"
       }],
       onChange: new_val => {
         props.setAttributes({
@@ -4070,14 +4070,14 @@ registerBlockType('zenbsgridblocks/section', {
     })))), wp.element.createElement("div", {
       className: props.className
     }, wp.element.createElement("section", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()('section', [`${props.attributes.textColorTheme !== undefined ? `${props.attributes.textColorTheme}` : ''}`], [`${props.attributes.backgroundColorTheme !== undefined ? `${props.attributes.backgroundColorTheme}` : ''}`], [`${props.attributes.paddingSection !== undefined ? `py-${props.attributes.paddingSection}` : ''}`], [`${props.attributes.backgroundImageTint !== undefined ? `${props.attributes.backgroundImageTint}` : ''}`]),
+      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()("section", [`${props.attributes.textColorTheme !== undefined ? `${props.attributes.textColorTheme}` : ""}`], [`${props.attributes.backgroundColorTheme !== undefined ? `${props.attributes.backgroundColorTheme}` : ""}`], [`${props.attributes.paddingSection !== undefined ? `py-${props.attributes.paddingSection}` : ""}`], [`${props.attributes.backgroundImageTint !== undefined ? `${props.attributes.backgroundImageTint}` : ""}`]),
       style: {
         ...style,
         ...BackgroundIsActive
       }
     }, wp.element.createElement(InnerBlocks, {
-      allowedBlocks: ['zenbsgridblocks/container', 'zenbsgridblocks/responsive-spacer'],
-      template: [['zenbsgridblocks/responsive-spacer'], ['zenbsgridblocks/container'], ['zenbsgridblocks/responsive-spacer']]
+      allowedBlocks: ["zenbsgridblocks/container", "zenbsgridblocks/responsive-spacer"],
+      template: [["zenbsgridblocks/responsive-spacer"], ["zenbsgridblocks/container"], ["zenbsgridblocks/responsive-spacer"]]
     })))];
   },
   save(props) {
@@ -4086,7 +4086,7 @@ registerBlockType('zenbsgridblocks/section', {
     } = props;
 
     //Only use the background inline style if its not null
-    let BackgroundIsActive = '';
+    let BackgroundIsActive = "";
     if (props.attributes.backgroundImage !== null) {
       BackgroundIsActive = {
         backgroundImage: `url( ${props.attributes.backgroundImage} )`
@@ -4102,7 +4102,7 @@ registerBlockType('zenbsgridblocks/section', {
       backgroundPosition: props.attributes.backgroundImagePos
     };
     return wp.element.createElement("div", null, wp.element.createElement("section", {
-      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()('section', [`${props.attributes.textColorTheme !== undefined ? `${props.attributes.textColorTheme}` : ''}`], [`${props.attributes.backgroundColorTheme !== undefined ? `${props.attributes.backgroundColorTheme}` : ''}`], [`${props.attributes.paddingSection !== undefined ? `py-${props.attributes.paddingSection}` : ''}`], [`${props.attributes.backgroundImageTint !== undefined ? `${props.attributes.backgroundImageTint}` : ''}`]),
+      className: classnames__WEBPACK_IMPORTED_MODULE_2___default()("section", [`${props.attributes.textColorTheme !== undefined ? `${props.attributes.textColorTheme}` : ""}`], [`${props.attributes.backgroundColorTheme !== undefined ? `${props.attributes.backgroundColorTheme}` : ""}`], [`${props.attributes.paddingSection !== undefined ? `py-${props.attributes.paddingSection}` : ""}`], [`${props.attributes.backgroundImageTint !== undefined ? `${props.attributes.backgroundImageTint}` : ""}`]),
       style: {
         ...style,
         ...BackgroundIsActive
@@ -4570,7 +4570,7 @@ registerBlockType('zenbsgridblocks/row', {
         });
       }
     })), wp.element.createElement(PanelBody, {
-      title: __('Content Display Settings', 'zenbsgridblocks'),
+      title: __('Row Content Display Settings', 'zenbsgridblocks'),
       initialOpen: false
     }, wp.element.createElement(PanelRow, {
       className: "w-100"
@@ -4689,7 +4689,7 @@ registerBlockType('zenbsgridblocks/row', {
         });
       }
     }))), wp.element.createElement(PanelBody, {
-      title: __('Bootstrap colors', 'zenbsgridblocks'),
+      title: __('Row Bootstrap colors', 'zenbsgridblocks'),
       initialOpen: false
     }, wp.element.createElement(PanelRow, {
       className: "w-100"
@@ -4774,7 +4774,7 @@ registerBlockType('zenbsgridblocks/row', {
         });
       }
     }))), wp.element.createElement(PanelColorSettings, {
-      title: __('Custom color Settings', 'zenbsgridblocks'),
+      title: __('Row Custom color Settings', 'zenbsgridblocks'),
       initialOpen: false,
       colorSettings: [{
         value: backgroundColor,
@@ -4790,7 +4790,7 @@ registerBlockType('zenbsgridblocks/row', {
         label: __('Text Color')
       }]
     }), wp.element.createElement(PanelBody, {
-      title: __('Background image', 'zenbsgridblocks'),
+      title: __('Row Background image', 'zenbsgridblocks'),
       initialOpen: false
     }, !!attributes.backgroundImage == '' && wp.element.createElement(PanelRow, {
       className: "w-100"
@@ -5094,7 +5094,7 @@ registerBlockType("zenbsgridblocks/responsive-spacer", {
       minHeight: props.attributes.minHeightCol
     };
     return [wp.element.createElement(InspectorControls, null, wp.element.createElement(Panel, null, wp.element.createElement(PanelBody, {
-      title: __('Height', 'zenbsgridblocks'),
+      title: __('Spacer Height', 'zenbsgridblocks'),
       initialOpen: true
     }, wp.element.createElement("div", {
       className: "zen-gut-panel-help"

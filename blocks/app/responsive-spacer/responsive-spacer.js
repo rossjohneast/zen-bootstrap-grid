@@ -49,7 +49,7 @@ registerBlockType("zenbsgridblocks/responsive-spacer", {
     return [
       <InspectorControls>
         <Panel>
-        <PanelBody title={__('Height', 'zenbsgridblocks')} initialOpen={true} >
+        <PanelBody title={__('Spacer Height', 'zenbsgridblocks')} initialOpen={true} >
 
         <div className="zen-gut-panel-help">
             <p>

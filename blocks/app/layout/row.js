@@ -437,7 +437,7 @@ registerBlockType('zenbsgridblocks/row', {
 
 
 </PanelBody>
-                    <PanelBody title={__('Content Display Settings', 'zenbsgridblocks')} initialOpen={false}>
+                    <PanelBody title={__('Row Content Display Settings', 'zenbsgridblocks')} initialOpen={false}>
                 <PanelRow className="w-100">
                         <SelectControl
                             label={__('Display', 'zenbsgridblocks')}
@@ -509,7 +509,7 @@ registerBlockType('zenbsgridblocks/row', {
                     </PanelBody>
 
 
-                <PanelBody title={__('Bootstrap colors', 'zenbsgridblocks')} initialOpen={false}>
+                <PanelBody title={__('Row Bootstrap colors', 'zenbsgridblocks')} initialOpen={false}>
                     <PanelRow className="w-100">
                         <SelectControl
                             label={__('Background Color', 'zenbsgridblocks')}
@@ -553,7 +553,7 @@ registerBlockType('zenbsgridblocks/row', {
                 </PanelBody>
 
                 <PanelColorSettings
-                    title={__('Custom color Settings', 'zenbsgridblocks')} initialOpen={false}
+                    title={__('Row Custom color Settings', 'zenbsgridblocks')} initialOpen={false}
                     colorSettings={[
                         {
                             value: backgroundColor,
@@ -570,7 +570,7 @@ registerBlockType('zenbsgridblocks/row', {
 
                 </PanelColorSettings>
 
-                <PanelBody title={__('Background image', 'zenbsgridblocks')} initialOpen={false} >
+                <PanelBody title={__('Row Background image', 'zenbsgridblocks')} initialOpen={false} >
                 {!!attributes.backgroundImage == '' &&
                     <PanelRow className="w-100">
                         <MediaUploadCheck>
