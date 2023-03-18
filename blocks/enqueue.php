@@ -44,7 +44,7 @@ add_action('admin_enqueue_scripts','zenbsgridblocks_enqueue_block_editor_assets'
 function zenbsgridblocks_enqueue_block_assets(){
     wp_register_style(
         'zenbsgridblocks_blocks',
-        plugins_url('/blocks/dist/blocks-main.css', ZEN_BS_GRID_BLOCKS_PLUGIN_URL)
+        plugins_url('/blocks/build/style-index.css', ZEN_BS_GRID_BLOCKS_PLUGIN_URL)
     );
     wp_enqueue_style( 'zenbsgridblocks_blocks' );
 }
@@ -53,7 +53,7 @@ function zenbsgridblocks_enqueue_block_assets(){
 //Register editor and front end block styles
 function zenbsgridblocks_enqueue_block_assets_ed_and_fe() 
 {
-    wp_enqueue_style( 'zenbsgridblocks_block_editor_and_fe_styles', plugins_url( '/blocks/dist/blocks-main.css', __FILE__ ) );
+    wp_enqueue_style( 'zenbsgridblocks_block_editor_and_fe_styles', plugins_url( '/blocks/build/blocks-main.css', __FILE__ ) );
 }
 
 add_action('block_editor_and_fe_styles', 'zenbsgridblocks_enqueue_block_assets_ed_and_fe');

@@ -24,6 +24,8 @@ define('ZEN_BS_GRID_BLOCKS_PLUGIN_URL', __FILE__);
 include('includes/activate.php');
 include('includes/front/enqueue.php');
 include('includes/editor/enqueue.php');
+include('includes/editor/options-screen/options-screen.php');
+include('includes/editor/options-screen/options-functions.php');
 include('blocks/enqueue.php');
 
 //HOOKS
@@ -33,3 +35,10 @@ add_action('enqueue_block_editor_assets', 'zenbsgridblocks_enqueue_block_editor_
 add_action('enqueue_block_assets', 'zenbsgridblocks_enqueue_block_assets');
 
 //Check for updates to the plugin...
+
+
+
+
+
+
+

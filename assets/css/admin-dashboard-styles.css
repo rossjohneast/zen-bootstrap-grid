@@ -1,7 +1,6 @@
 /* ADMIN DASHBOARD BACK END STYLES */
 /* Custom dashboard styles for the zenbsgridblocks plugin */
 
-@import url('blocks/admin-responsive-spacer.css');
 
 .components-tab-panel__tabs-item {
     padding: 3px 5px;
