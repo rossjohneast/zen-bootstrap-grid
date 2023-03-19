@@ -14,14 +14,14 @@ class WordCountAndTimePlugin {
         add_settings_section( 'zenbsgb_op_first_section', 'Title text here', null, 'zenbsgridblocks-options-settings-page' );
         
         //Build HTML
-        add_settings_field( 'zenbsgb_op_location', 'Display location', array($this, 'locationHTML'), 'zenbsgridblocks-options-settings-page', 'zenbsgb_op_first_section' );
+      //  add_settings_field( 'zenbsgb_op_location', 'Display location', array($this, 'locationHTML'), 'zenbsgridblocks-options-settings-page', 'zenbsgb_op_first_section' );
         //Reg in DB
-        register_setting( 'customoptionsplugin', 'zenbsgb_op_location', array('sanitize_callback' => array($this, 'sanitizeLocation'), 'default' => '0') );
+       // register_setting( 'customoptionsplugin', 'zenbsgb_op_location', array('sanitize_callback' => array($this, 'sanitizeLocation'), 'default' => '0') );
 
-        add_settings_field( 'zenbsgb_op_headline', 'Headline Text', array($this, 'headlineHTML'), 'zenbsgridblocks-options-settings-page', 'zenbsgb_op_first_section' );
-        register_setting( 'customoptionsplugin', 'zenbsgb_op_headline', array('sanitize_callback' => 'sanitize_text_field', 'default' => 'Post Statistics') );
+        //add_settings_field( 'zenbsgb_op_bs_cdn_css', 'Bootstrap CSS CDN', array($this, 'bootstrapCSSCDN'), 'zenbsgridblocks-options-settings-page', 'zenbsgb_op_first_section' );
+       // register_setting( 'customoptionsplugin', 'zenbsgb_op_bs_cdn_css', array('sanitize_callback' => 'sanitize_text_field', 'default' => 'URL HERE ? Post Statistics') );
 
-        add_settings_field( 'zenbsgb_op_trueorfalse', 'Disable Core Blocks (Button, Columns)', array($this, 'trueorfalseHTML'), 'zenbsgridblocks-options-settings-page', 'zenbsgb_op_first_section' );
+        add_settings_field( 'zenbsgb_op_trueorfalse', 'Disable Core Blocks (Buttons, Columns)', array($this, 'trueorfalseHTML'), 'zenbsgridblocks-options-settings-page', 'zenbsgb_op_first_section' );
         register_setting( 'customoptionsplugin', 'zenbsgb_op_trueorfalse', array('sanitize_callback' => 'sanitize_text_field', 'default' => '1') );
     }
 
@@ -42,20 +42,13 @@ class WordCountAndTimePlugin {
     
     <?php }
 
-    function headlineHTML(){ ?>
+    function bootstrapCSSCDN(){ ?>
         <!-- //esc_attr is a WordPress security function when putting data into html -->
-        <input type="text" name="zenbsgb_op_headline" value="<?php echo esc_attr( get_option( 'zenbsgb_op_headline') );  ?>">
+        <input style="width:100%;" type="text" name="zenbsgb_op_bs_cdn_css" value="<?php echo esc_attr( get_option( 'zenbsgb_op_bs_cdn_css') );  ?>">
 
     <?php 
     
-    
-
-
-
-
 }
-
-
 
 
     function locationHTML(){ ?>
